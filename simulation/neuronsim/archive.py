@@ -164,6 +164,7 @@ def main(argv=None, *, dataset=None, legacy=False):
     pc.nthread(1)
     configure_solver(h, pc)
     cells = {}
+    # SIMULATION CORE: use the same SWC importer/channels as prepared datasets.
     for index, cell_id in enumerate(selected, 1):
         cells[cell_id] = PublishedSWCCell(valid[cell_id], profile, original_discretization=args.original_family)
         if index == len(selected) or index % 25 == 0:
@@ -189,6 +190,7 @@ def main(argv=None, *, dataset=None, legacy=False):
     synapses, connections, connection_events, mappings = [], [], [], []
     for row in contacts:
         pre, post = row['pre_pt_root_id'], row['post_pt_root_id']
+        # SIMULATION CORE: coordinate-mapped presynaptic/target segments matter.
         # Archive endpoints are in nm; nearest_segment converts to SWC µm.
         # Preserve the presynaptic contact segment, not the soma/GID source
         # used by the aggregate column/Minnie models. This affects firing.
@@ -210,6 +212,7 @@ def main(argv=None, *, dataset=None, legacy=False):
         owner.amp = owner.dur = 0.
         recording_owners[name] = owner
         soma[name] = h.Vector().record(owner, cell.soma[0](.5)._ref_v)
+    # SIMULATION CORE: the archive experiment injects its selected soma at 0–1 ms.
     stimulus = h.IClamp(cells[selected[0]].soma[0](.5))
     stimulus.amp, stimulus.delay, stimulus.dur = args.amplitude, 0., 1.
     # Global t has no section: use the clamp to identify its recording thread.
@@ -219,11 +222,13 @@ def main(argv=None, *, dataset=None, legacy=False):
     print(f'Starting fixed-step simulation: {len(cells)} cells, {len(connections)} synapses, {args.duration:g} ms, {args.threads} thread(s)', flush=True)
     integration_start = time.perf_counter()
     integration_cpu_start = time.process_time()
+    # SIMULATION CORE: reset voltages/channel states, then advance native NEURON.
     h.finitialize(p.initial_voltage_mv)
     initialization_seconds = time.perf_counter() - integration_start
     stop = 0.
     while stop < args.duration:
         stop = min(args.duration, stop + 5.)
+        # SIMULATION CORE: actual integration, including native synaptic delivery.
         pc.psolve(stop)
         print(f'Simulated {stop:g}/{args.duration:g} ms; integration {time.perf_counter() - integration_start:.1f} s', flush=True)
     integration_seconds = time.perf_counter() - integration_start

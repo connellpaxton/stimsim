@@ -4,6 +4,7 @@ This code was imported from a separate NeuronSim workspace. Read the [import not
 
 ## Read the code
 
+- [Critical simulation path](CRITICAL_SIMULATION_PATH.md): highlighted source blocks from morphology and channels to the actual `pc.psolve()` integration call.
 - [Code walkthrough](CODE_WALKTHROUGH.md): execution order, assumptions, file formats, and functions to inspect.
 - [Repository setup and commands](../README.md).
 - [Real Minnie recording selection](../examples/minnie/README.md).

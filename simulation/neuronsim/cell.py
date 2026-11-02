@@ -26,7 +26,7 @@ class PublishedSWCCell:
             raise ValueError(f"Unsupported SWC section types in {self.path}")
         self.swc_nodes = len(rows)
 
-        # Import3D constructs connected cable sections from the recorded tree.
+        # SIMULATION CORE: NEURON Import3D creates the connected cable sections.
         reader = h.Import3d_SWC_read()
         reader.input(str(self.path))
         importer = h.Import3d_GUI(reader, False)
@@ -46,6 +46,7 @@ class PublishedSWCCell:
                 section_list.append(sec=section)
             setattr(self, name, section_list)
 
+        # SIMULATION CORE: nseg determines the electrical compartments solved.
         for section in self.sections:
             if original_discretization:
                 # cACint209 uses Ra=100 and cm=1 in every region. These determine
@@ -62,6 +63,7 @@ class PublishedSWCCell:
         self.soma[0].push()
         h.distance()
         h.pop_section()
+        # SIMULATION CORE: insert channels and set region-specific conductances.
         profile.biophys(self)
         self.removed_zero_channels = prune_zero_conductance_channels(self.all)
 

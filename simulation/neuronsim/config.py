@@ -8,6 +8,7 @@ SOURCE = ROOT / "vendor/aberra2018"
 PROFILE = SOURCE / "cells/L4_LBC_cACint209_1/biophysics.hoc"
 
 
+# SIMULATION CORE: numerical/physical constants shared by both dataset engines.
 @dataclass(frozen=True)
 class ModelParameters:
     """Defaults used by the validated runs, rather than Minnie measurements."""

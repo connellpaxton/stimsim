@@ -28,6 +28,7 @@ def resident_memory_bytes():
 
 def configure_solver(h, pc):
     """Use the benchmarked fixed timestep and native cache-efficient layout."""
+    # SIMULATION CORE: select fixed-step integration, timestep and temperature.
     h.CVode().active(0)
     h.CVode().cache_efficient(1)
     h.dt = PARAMETERS.dt_ms
@@ -98,6 +99,7 @@ def run_protocol(h, pc, protocol, output, shared, column, cells, contacts,
     p = PARAMETERS
     destination = output / protocol.label
     destination.mkdir(parents=True, exist_ok=True)
+    # SIMULATION CORE: set the injected current and transmission/control weights.
     for root, clamp in clamps.items():
         clamp.amp = protocol.amplitude_na if root in protocol.cells else 0.0
         clamp.delay = protocol.onset_ms
@@ -107,6 +109,7 @@ def run_protocol(h, pc, protocol, output, shared, column, cells, contacts,
     recording.clear_spikes()
 
     initialization = time.perf_counter()
+    # SIMULATION CORE: initialize voltages/channel states for this condition.
     h.finitialize(p.initial_voltage_mv)
     initialization = time.perf_counter() - initialization
     actual_loads = partition.verify(h, cells.sections)
@@ -118,6 +121,7 @@ def run_protocol(h, pc, protocol, output, shared, column, cells, contacts,
     stop = 0.0
     while stop < protocol.duration_ms:
         stop = min(protocol.duration_ms, stop + p.progress_interval_ms)
+        # SIMULATION CORE: NEURON advances cable/channel states and queued events.
         pc.psolve(stop)
         if int(pc.id()) == 0:
             print(f"{protocol.label}: {stop:g}/{protocol.duration_ms:g} ms; solve {time.perf_counter() - solve:.2f} s", flush=True)
@@ -175,6 +179,7 @@ def run(args):
         raise ValueError("Observed cell/contact counts differ from the selected dataset")
     pc = h.ParallelContext()
     pc.nthread(1)
+    # SIMULATION CORE: construct the native network before advancing model time.
     cells = build_cells(h, pc, column, args.morphologies, profile, started)
     contacts = connect_synapses(
         h, pc, column, cells, args.output, args.inhibition, args.inhibitory_reversal

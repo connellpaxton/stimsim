@@ -17,6 +17,7 @@ def load_published_model(h, neuron):
     for item in manifest["files"]:
         if sha256(SOURCE / item["path"]) != item["sha256"]:
             raise RuntimeError("Published reference source changed")
+    # SIMULATION CORE: compiled MOD mechanisms supply the ion-channel equations.
     neuron.load_mechanisms(str(SOURCE / "mechanisms"))
     h.load_file("stdrun.hoc")
     h.load_file("import3d.hoc")
@@ -75,7 +76,8 @@ def build_cells(h, pc, column, morphology, profile, started, global_gids=None):
         ])
         choices[root] = ([name for name, _ in available], areas / areas.sum())
 
-        # GIDs identify spike sources. A source spike schedules NetCon events;
+        # SIMULATION CORE: GIDs identify spike sources and route native events.
+        # A source spike schedules NetCon events;
         # Python does not scan every synapse at every integration step.
         pc.set_gid2node(gid, int(pc.id()))
         cell.detector = h.NetCon(
@@ -109,6 +111,7 @@ class Contacts:
 
 def create_synapse(h, postsynaptic_segment, reversal_mv):
     """Shared receptor kinetics; anatomical data do not supply these constants."""
+    # SIMULATION CORE: receptor kinetics and reversal determine synaptic current.
     synapse = h.Exp2Syn(postsynaptic_segment)
     synapse.tau1 = PARAMETERS.synapse_rise_ms
     synapse.tau2 = PARAMETERS.synapse_decay_ms
@@ -146,6 +149,7 @@ def connect_synapses(h, pc, column, cells, output, inhibition, inhibitory_revers
             reversal = synaptic_reversal(source, inhibition, inhibitory_reversal)
             counts[source["ei_class"]] += int(edge["n_syn"])
             names, probabilities = cells.placement_choices[post]
+            # SIMULATION CORE: choose the target and wire each anatomical contact.
             for ordinal in range(int(edge["n_syn"])):
                 name = names[int(rng.choice(len(names), p=probabilities))]
                 position = float(rng.uniform(0.1, 0.9))
@@ -193,6 +197,7 @@ def partition_cells(h, pc, cells, thread_count):
             if section.parentseg() is None:
                 partitions[thread].append(sec=section)
         loads[thread] += len(cell.segments)
+    # SIMULATION CORE (parallel execution): native workers own whole cable trees.
     pc.nthread(thread_count)
     for index, roots in enumerate(partitions):
         pc.partition(index, roots)

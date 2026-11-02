@@ -8,6 +8,8 @@ The `neuronsim` package imports per-cell SWCs, applies a checksum-pinned publish
 
 Start with [data provenance and exact source URLs](docs/DATA_PROVENANCE.md), the [code walkthrough](docs/CODE_WALKTHROUGH.md), and [import notes](docs/IMPORT_NOTES.md).
 
+To inspect the computation itself, follow the [critical simulation code path](docs/CRITICAL_SIMULATION_PATH.md). Its source blocks are marked `SIMULATION CORE`.
+
 ## Choose a dataset
 
 Use these separate entry files from `simulation/`. Each prints its dataset identity/source URLs and saves `dataset.json` plus dataset metadata in its result summaries. `--describe` prints the source/version/assumption record without loading data or running NEURON.

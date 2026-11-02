@@ -50,6 +50,8 @@ def run(args):
             {"anatomical_contacts": sum(int(row["n_syn"]) for row in edges)},
             {row["root_id"]: row for row in geometry["records"]}, geometry,
         )
+        # SIMULATION CORE (MPI): each rank builds its cells and incoming contacts;
+        # global GIDs let NEURON deliver spikes between rank-owned cable trees.
         cells = build_cells(h, pc, column, local.morphologies, profile, started, global_gids=gids)
         cell_seconds = time.perf_counter() - started
         contacts = connect_synapses(
@@ -82,6 +84,7 @@ def run(args):
                 "maximum_cell_construction_seconds": max(row["cell_seconds"] for row in timing),
                 "maximum_total_construction_seconds": max(row["construction_seconds"] for row in timing)}, indent=2) + "\n")
             print(f"MPI construction complete: {manifest['neurons']:,} cells, {manifest['contacts']:,} contacts across {ranks} ranks", flush=True)
+        # SIMULATION CORE: use the same initialization/stimulus/psolve path on all ranks.
         for index, protocol in enumerate(make_protocols(args, stimulated)):
             run_protocol(h, pc, protocol, local.output, shared, column, cells, contacts,
                          partition, clamps, recording, None, first=index == 0)

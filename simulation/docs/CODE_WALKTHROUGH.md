@@ -1,5 +1,7 @@
 # How the Minnie simulation works
 
+For the shortest route to the computation, use the [critical simulation code path](CRITICAL_SIMULATION_PATH.md), with direct links to SWC import, channels, synapses, stimulus and the native solver call.
+
 Choose a [dataset entry file](DATASET_ENTRY_POINTS.md) first. `neuronsim/datasets.py` holds identities, URLs and preflight checks. Original three-cell/L23 coordinate contacts share `neuronsim/archive.py`; prepared column/full-Minnie inputs use the engine below. Both reuse the SWC importer, published model, solver configuration and native partitioner.
 
 Start in [`simulation.run()`](../neuronsim/simulation.py). It lists construction and execution steps in order. [`cli.py`](../neuronsim/cli.py) parses options; the older [`tools/run_minnie_241165.py`](../tools/run_minnie_241165.py) is a compatible launcher.
