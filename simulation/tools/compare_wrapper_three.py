@@ -20,8 +20,10 @@ import types
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-IDS = ["864691135640672571", "864691135993429185", "864691136025333561"]
-DEFAULT_DATA = Path("/home/shisoft/Downloads/neuron_10-26-2026-20261027T002512Z-1-001/neuron_10-26-2026")
+from neuronsim.archive import DEFAULT_DATA
+from neuronsim.datasets import THREE_NEURONS
+
+IDS = list(THREE_NEURONS.roots)
 MODES = ["wrapper_reference", "current_coordinate_matched", "current_defaults", "zero_transmission"]
 
 

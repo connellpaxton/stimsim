@@ -36,6 +36,8 @@ def merge(run, output):
         for summary in summaries:
             if any(summary[key] != first[key] for key in shared_fields):
                 raise ValueError("MPI rank configurations differ")
+            if summary.get("dataset") != first.get("dataset"):
+                raise ValueError("MPI rank dataset identities differ")
         with np.load(ranks[0] / protocol / "recordings.npz") as archive:
             times = archive["time_ms"]
         voltages = np.empty((len(roots), len(times)), dtype=np.float64)
@@ -81,6 +83,8 @@ def merge(run, output):
         if summary["anatomical_contact_count"] != manifest["contacts"] or summary["recorded_neuronal_spikes"] != len(event_times):
             raise ValueError("Merged contact or spike counts differ")
         (destination / "summary.json").write_text(json.dumps(summary, indent=2) + "\n")
+        if first.get("dataset"):
+            (output / "dataset.json").write_text(json.dumps(first["dataset"], indent=2) + "\n")
     streams = [gzip.open(rank / "modeled_sites.csv.gz", "rt") for rank in ranks]
     try:
         readers = [csv.DictReader(stream) for stream in streams]

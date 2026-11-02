@@ -107,6 +107,16 @@ class Contacts:
     by_source_class: Counter
 
 
+def create_synapse(h, postsynaptic_segment, reversal_mv):
+    """Shared receptor kinetics; anatomical data do not supply these constants."""
+    synapse = h.Exp2Syn(postsynaptic_segment)
+    synapse.tau1 = PARAMETERS.synapse_rise_ms
+    synapse.tau2 = PARAMETERS.synapse_decay_ms
+    # Conductance weights stay positive. Reversal potential sets polarity.
+    synapse.e = reversal_mv
+    return synapse
+
+
 def connect_synapses(h, pc, column, cells, output, inhibition, inhibitory_reversal, global_gids=None):
     """Expand each observed n_syn count into that many native Exp2Syn objects."""
     import numpy as np
@@ -139,10 +149,7 @@ def connect_synapses(h, pc, column, cells, output, inhibition, inhibitory_revers
             for ordinal in range(int(edge["n_syn"])):
                 name = names[int(rng.choice(len(names), p=probabilities))]
                 position = float(rng.uniform(0.1, 0.9))
-                synapse = h.Exp2Syn(cells.section_names[post][name](position))
-                synapse.tau1 = settings.synapse_rise_ms
-                synapse.tau2 = settings.synapse_decay_ms
-                synapse.e = reversal
+                synapse = create_synapse(h, cells.section_names[post][name](position), reversal)
                 source_gid = global_gids[pre] if global_gids is not None else cells.by_root[pre].gid
                 connection = pc.gid_connect(source_gid, synapse)
                 connection.delay = settings.delay_ms

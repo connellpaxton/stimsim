@@ -11,6 +11,8 @@ This code was imported from a separate NeuronSim workspace. Read the [import not
 
 ## Current Minnie / ModelDB 241165 experiment
 
+Use the [four dataset entry points](DATASET_ENTRY_POINTS.md) to select the original three cells, L23, reconstructed column or full eligible Minnie cohort explicitly.
+
 Start with [dataset provenance and validation](DATA_PROVENANCE.md) for exact source URLs, data transformations, model assumptions and limits of the evidence.
 
 | Report | What it explains |

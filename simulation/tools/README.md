@@ -2,6 +2,8 @@
 
 The current simulation implementation lives in [`../neuronsim/`](../neuronsim/). Start with [the code walkthrough](../docs/CODE_WALKTHROUGH.md).
 
+For new runs, select one of the four [dataset entry files](../docs/DATASET_ENTRY_POINTS.md) in `simulation/`. `tools/run_l23.py` remains a legacy compatibility launcher; the new `../run_l23.py` defaults to all valid L23 cells and the current electrical profile.
+
 ## Current Minnie / ModelDB 241165 workflow
 
 | Tool | Purpose |

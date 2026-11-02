@@ -2,6 +2,8 @@
 
 Checks performed November 2, 2026 in the local `feat/neuron-simulation` branch, after moving the implementation under `simulation/`.
 
+This records the initial import at commit `fd3080d`, before the branch was renamed to `parallel-neuron-simulation`. Subsequent [dataset entry-point validation](DATASET_ENTRY_POINTS.md) covers the shared-runner refactor and additional tests.
+
 ## Environment and compilation
 
 A fresh virtual environment was installed for this checkout: Python 3.11, NEURON 9.0.1, NumPy 2.4.6, Matplotlib 3.11.2 and pandas 3.1.0. `pip check` reports no broken requirements. Both the published `vendor/aberra2018/mechanisms/` and earlier recovered `mechanisms/` sources compiled successfully using `nrnivmodl`; compiled output is ignored by Git.

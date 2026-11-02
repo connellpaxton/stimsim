@@ -47,6 +47,7 @@ def make_summary(args, neuron, pc, column, cells, contacts, partition, source, s
         "All contacts have e=0 mV, including contacts from anatomically inhibitory cells, exactly as the original SynapseConstructor default; this is not a balanced E/I network."
     )
     return {
+        **({"dataset": args.dataset_provenance} if hasattr(args, "dataset_provenance") else {}),
         "scope": "Published ModelDB 241165 cACint209 regional adaptation of the supplied script on Minnie geometry; not an exact reproduction of missing custom MOD variants",
         "hostname": platform.node(), "neuron_version": neuron.__version__,
         "modeldb_id": 241165, "source_commit": source["commit"],
@@ -166,6 +167,12 @@ def run(args):
     source, profile = load_published_model(h, neuron)
     branch_roots = json.loads(args.branch_roots.read_text()) if args.branch_roots else []
     column = load_column(args.data, args.morphologies, branch_roots)
+    # The named entry point also checks the actual graph after reading edges;
+    # a correct-looking preparation summary must not hide an edited CSV.
+    dataset = getattr(args, "dataset_provenance", None)
+    if dataset and (len(column.nodes) != dataset["neurons"]
+                    or column.graph["anatomical_contacts"] != dataset["contacts"]):
+        raise ValueError("Observed cell/contact counts differ from the selected dataset")
     pc = h.ParallelContext()
     pc.nthread(1)
     cells = build_cells(h, pc, column, args.morphologies, profile, started)

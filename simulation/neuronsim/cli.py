@@ -6,8 +6,8 @@ import os
 from pathlib import Path
 
 
-def parse_args(argv=None):
-    parser = argparse.ArgumentParser(prog="python -m neuronsim", description=__doc__)
+def parse_args(argv=None, *, description=__doc__, defaults=None):
+    parser = argparse.ArgumentParser(description=description, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--data", type=Path, required=True, help="Prepared Minnie nodes.csv and edges.csv directory")
     parser.add_argument("--morphologies", type=Path, required=True, help="Validated manifest.json and swc/ directory")
     parser.add_argument("--output", type=Path, required=True)
@@ -16,12 +16,16 @@ def parse_args(argv=None):
     parser.add_argument("--control-only", action="store_true", help="Run zero-transmission protocols in a fresh process")
     parser.add_argument("--matched-protocol", action="store_true", help="Also run the earlier 100 ms, 32-cell current protocol")
     parser.add_argument("--stimulus-reference", type=Path, help="Reuse the injected IDs from a previous run summary")
-    parser.add_argument("--inhibition", action="store_true", help="Make outputs from Minnie inhibitory cells inhibitory")
+    polarity = parser.add_mutually_exclusive_group()
+    polarity.add_argument("--inhibition", action="store_true", help="Make outputs from Minnie inhibitory cells inhibitory")
+    polarity.add_argument("--no-inhibition", dest="inhibition", action="store_false", help="Explicitly request all-excitatory outputs")
+    parser.set_defaults(inhibition=False)
     parser.add_argument("--inhibitory-reversal", type=float, default=-80.0, help="Assumed inhibitory Exp2Syn reversal potential, mV")
     parser.add_argument("--duration-ms", type=float, help="Model time in milliseconds, with the near-start stimulus; 1000 means one model second")
     parser.add_argument("--validation-window-ms", type=float, help="After the long protocol, run a zero-transmission control and coupled replay for this many milliseconds")
     parser.add_argument("--branch-roots", type=Path, help="JSON list of neuron IDs to record at cable-segment resolution")
     parser.add_argument("--mpi-shards", type=Path, help="Destination-owned input shards prepared by python -m neuronsim.sharding")
+    parser.set_defaults(**(defaults or {}))
     args = parser.parse_args(argv)
     if args.threads < 1:
         parser.error("Thread count must be positive")
@@ -44,8 +48,8 @@ def parse_args(argv=None):
     return args
 
 
-def main(argv=None):
-    args = parse_args(argv)
+def run_args(args):
+    """Shared dispatch for the generic CLI and dataset-specific entry points."""
     args.output.mkdir(parents=True, exist_ok=True)
     # Set before NumPy/NEURON imports so BLAS does not create nested workers.
     os.environ["NEURON_MODULE_OPTIONS"] = "-nogui"
@@ -57,3 +61,7 @@ def main(argv=None):
         from .simulation import run
 
     run(args)
+
+
+def main(argv=None):
+    run_args(parse_args(argv))

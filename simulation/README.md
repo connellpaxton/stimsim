@@ -8,6 +8,19 @@ The `neuronsim` package imports per-cell SWCs, applies a checksum-pinned publish
 
 Start with [data provenance and exact source URLs](docs/DATA_PROVENANCE.md), the [code walkthrough](docs/CODE_WALKTHROUGH.md), and [import notes](docs/IMPORT_NOTES.md).
 
+## Choose a dataset
+
+Use these separate entry files from `simulation/`. Each prints its dataset identity/source URLs and saves `dataset.json` plus dataset metadata in its result summaries. `--describe` prints the source/version/assumption record without loading data or running NEURON.
+
+| Entry file | Dataset and default selection |
+| --- | --- |
+| [`run_three_neurons.py`](run_three_neurons.py) | Exactly the original three L5 wrapper cells and three coordinate-mapped contacts |
+| [`run_l23.py`](run_l23.py) | All 313 valid original L23 cells and 5,112 internal coordinate-mapped contacts |
+| [`run_column.py`](run_column.py) | 1,352-cell column: v661 reconstructions linked by nucleus identity to v943 wiring; 124,341 contacts |
+| [`run_whole_minnie.py`](run_whole_minnie.py) | Full eligible v1300 cohort: 70,995 cells / 13,309,933 contacts; predominantly dendrite-only trees |
+
+See [commands, exact URLs and connection-method differences](docs/DATASET_ENTRY_POINTS.md). Dataset selection is centralized in `neuronsim/datasets.py`; archive experiments share `neuronsim/archive.py`, while prepared column/full-Minnie experiments share the existing native/MPI engine. Both reuse the same cell importer, published profiles, solver settings and whole-cell thread partitioner.
+
 ## Layout
 
 | Path | Contents |
