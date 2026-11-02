@@ -1,0 +1,209 @@
+{
+  "searched_remaining_mechanisms": 27,
+  "published_exact_suffix_candidates": 11,
+  "exact_variants_not_located": 16,
+  "extra_supporting_channel": "NaTs2_t",
+  "inventory": [
+    {
+      "name": "Ca",
+      "status": "published_exact_suffix_candidate",
+      "related_base": "Ca",
+      "published_source": "https://github.com/Aman-A/TMSsim_Aberra2019/blob/8ec575a1f1042abc64ed05d74e5f7e6672375d5d/nrn/mechanisms/Ca.mod",
+      "author_equivalence_verified": false
+    },
+    {
+      "name": "CaDynamics_E2",
+      "status": "published_exact_suffix_candidate",
+      "related_base": "CaDynamics_E2",
+      "published_source": "https://github.com/Aman-A/TMSsim_Aberra2019/blob/8ec575a1f1042abc64ed05d74e5f7e6672375d5d/nrn/mechanisms/CaDynamics_E2.mod",
+      "author_equivalence_verified": false
+    },
+    {
+      "name": "CaDynamics_E2_soma",
+      "status": "exact_variant_not_located",
+      "related_base": "CaDynamics_E2",
+      "published_source": "https://github.com/Aman-A/TMSsim_Aberra2019/blob/8ec575a1f1042abc64ed05d74e5f7e6672375d5d/nrn/mechanisms/CaDynamics_E2.mod",
+      "author_equivalence_verified": false
+    },
+    {
+      "name": "Ca_LVAst",
+      "status": "published_exact_suffix_candidate",
+      "related_base": "Ca_LVAst",
+      "published_source": "https://github.com/Aman-A/TMSsim_Aberra2019/blob/8ec575a1f1042abc64ed05d74e5f7e6672375d5d/nrn/mechanisms/Ca_LVAst.mod",
+      "author_equivalence_verified": false
+    },
+    {
+      "name": "Ca_LVAst_soma",
+      "status": "exact_variant_not_located",
+      "related_base": "Ca_LVAst",
+      "published_source": "https://github.com/Aman-A/TMSsim_Aberra2019/blob/8ec575a1f1042abc64ed05d74e5f7e6672375d5d/nrn/mechanisms/Ca_LVAst.mod",
+      "author_equivalence_verified": false
+    },
+    {
+      "name": "Ca_soma",
+      "status": "exact_variant_not_located",
+      "related_base": "Ca",
+      "published_source": "https://github.com/Aman-A/TMSsim_Aberra2019/blob/8ec575a1f1042abc64ed05d74e5f7e6672375d5d/nrn/mechanisms/Ca.mod",
+      "author_equivalence_verified": false
+    },
+    {
+      "name": "Ih",
+      "status": "published_exact_suffix_candidate",
+      "related_base": "Ih",
+      "published_source": "https://github.com/Aman-A/TMSsim_Aberra2019/blob/8ec575a1f1042abc64ed05d74e5f7e6672375d5d/nrn/mechanisms/Ih.mod",
+      "author_equivalence_verified": false
+    },
+    {
+      "name": "Im",
+      "status": "published_exact_suffix_candidate",
+      "related_base": "Im",
+      "published_source": "https://github.com/Aman-A/TMSsim_Aberra2019/blob/8ec575a1f1042abc64ed05d74e5f7e6672375d5d/nrn/mechanisms/Im.mod",
+      "author_equivalence_verified": false
+    },
+    {
+      "name": "Im_apic",
+      "status": "exact_variant_not_located",
+      "related_base": "Im",
+      "published_source": "https://github.com/Aman-A/TMSsim_Aberra2019/blob/8ec575a1f1042abc64ed05d74e5f7e6672375d5d/nrn/mechanisms/Im.mod",
+      "author_equivalence_verified": false
+    },
+    {
+      "name": "Im_soma",
+      "status": "exact_variant_not_located",
+      "related_base": "Im",
+      "published_source": "https://github.com/Aman-A/TMSsim_Aberra2019/blob/8ec575a1f1042abc64ed05d74e5f7e6672375d5d/nrn/mechanisms/Im.mod",
+      "author_equivalence_verified": false
+    },
+    {
+      "name": "K_Pst",
+      "status": "published_exact_suffix_candidate",
+      "related_base": "K_Pst",
+      "published_source": "https://github.com/Aman-A/TMSsim_Aberra2019/blob/8ec575a1f1042abc64ed05d74e5f7e6672375d5d/nrn/mechanisms/K_Pst.mod",
+      "author_equivalence_verified": false
+    },
+    {
+      "name": "K_Pst_apic",
+      "status": "exact_variant_not_located",
+      "related_base": "K_Pst",
+      "published_source": "https://github.com/Aman-A/TMSsim_Aberra2019/blob/8ec575a1f1042abc64ed05d74e5f7e6672375d5d/nrn/mechanisms/K_Pst.mod",
+      "author_equivalence_verified": false
+    },
+    {
+      "name": "K_Pst_soma",
+      "status": "exact_variant_not_located",
+      "related_base": "K_Pst",
+      "published_source": "https://github.com/Aman-A/TMSsim_Aberra2019/blob/8ec575a1f1042abc64ed05d74e5f7e6672375d5d/nrn/mechanisms/K_Pst.mod",
+      "author_equivalence_verified": false
+    },
+    {
+      "name": "K_Tst",
+      "status": "published_exact_suffix_candidate",
+      "related_base": "K_Tst",
+      "published_source": "https://github.com/Aman-A/TMSsim_Aberra2019/blob/8ec575a1f1042abc64ed05d74e5f7e6672375d5d/nrn/mechanisms/K_Tst.mod",
+      "author_equivalence_verified": false
+    },
+    {
+      "name": "K_Tst_apic",
+      "status": "exact_variant_not_located",
+      "related_base": "K_Tst",
+      "published_source": "https://github.com/Aman-A/TMSsim_Aberra2019/blob/8ec575a1f1042abc64ed05d74e5f7e6672375d5d/nrn/mechanisms/K_Tst.mod",
+      "author_equivalence_verified": false
+    },
+    {
+      "name": "K_Tst_soma",
+      "status": "exact_variant_not_located",
+      "related_base": "K_Tst",
+      "published_source": "https://github.com/Aman-A/TMSsim_Aberra2019/blob/8ec575a1f1042abc64ed05d74e5f7e6672375d5d/nrn/mechanisms/K_Tst.mod",
+      "author_equivalence_verified": false
+    },
+    {
+      "name": "NaTa_t",
+      "status": "published_exact_suffix_candidate",
+      "related_base": "NaTa_t",
+      "published_source": "https://github.com/Aman-A/TMSsim_Aberra2019/blob/8ec575a1f1042abc64ed05d74e5f7e6672375d5d/nrn/mechanisms/NaTa_t.mod",
+      "author_equivalence_verified": false
+    },
+    {
+      "name": "NaTa_t_nor",
+      "status": "exact_variant_not_located",
+      "related_base": "NaTa_t",
+      "published_source": "https://github.com/Aman-A/TMSsim_Aberra2019/blob/8ec575a1f1042abc64ed05d74e5f7e6672375d5d/nrn/mechanisms/NaTa_t.mod",
+      "author_equivalence_verified": false
+    },
+    {
+      "name": "NaTs2_t_apic",
+      "status": "exact_variant_not_located",
+      "related_base": "NaTs2_t",
+      "published_source": "https://github.com/Aman-A/TMSsim_Aberra2019/blob/8ec575a1f1042abc64ed05d74e5f7e6672375d5d/nrn/mechanisms/NaTs2_t.mod",
+      "author_equivalence_verified": false
+    },
+    {
+      "name": "NaTs2_t_soma",
+      "status": "exact_variant_not_located",
+      "related_base": "NaTs2_t",
+      "published_source": "https://github.com/Aman-A/TMSsim_Aberra2019/blob/8ec575a1f1042abc64ed05d74e5f7e6672375d5d/nrn/mechanisms/NaTs2_t.mod",
+      "author_equivalence_verified": false
+    },
+    {
+      "name": "Nap_Et2",
+      "status": "published_exact_suffix_candidate",
+      "related_base": "Nap_Et2",
+      "published_source": "https://github.com/Aman-A/TMSsim_Aberra2019/blob/8ec575a1f1042abc64ed05d74e5f7e6672375d5d/nrn/mechanisms/Nap_Et2.mod",
+      "author_equivalence_verified": false
+    },
+    {
+      "name": "Nap_Et2_soma",
+      "status": "exact_variant_not_located",
+      "related_base": "Nap_Et2",
+      "published_source": "https://github.com/Aman-A/TMSsim_Aberra2019/blob/8ec575a1f1042abc64ed05d74e5f7e6672375d5d/nrn/mechanisms/Nap_Et2.mod",
+      "author_equivalence_verified": false
+    },
+    {
+      "name": "SK_E2",
+      "status": "published_exact_suffix_candidate",
+      "related_base": "SK_E2",
+      "published_source": "https://github.com/Aman-A/TMSsim_Aberra2019/blob/8ec575a1f1042abc64ed05d74e5f7e6672375d5d/nrn/mechanisms/SK_E2.mod",
+      "author_equivalence_verified": false
+    },
+    {
+      "name": "SK_E2_soma",
+      "status": "exact_variant_not_located",
+      "related_base": "SK_E2",
+      "published_source": "https://github.com/Aman-A/TMSsim_Aberra2019/blob/8ec575a1f1042abc64ed05d74e5f7e6672375d5d/nrn/mechanisms/SK_E2.mod",
+      "author_equivalence_verified": false
+    },
+    {
+      "name": "SKv3_1",
+      "status": "published_exact_suffix_candidate",
+      "related_base": "SKv3_1",
+      "published_source": "https://github.com/Aman-A/TMSsim_Aberra2019/blob/8ec575a1f1042abc64ed05d74e5f7e6672375d5d/nrn/mechanisms/SKv3_1.mod",
+      "author_equivalence_verified": false
+    },
+    {
+      "name": "SKv3_1_apic",
+      "status": "exact_variant_not_located",
+      "related_base": "SKv3_1",
+      "published_source": "https://github.com/Aman-A/TMSsim_Aberra2019/blob/8ec575a1f1042abc64ed05d74e5f7e6672375d5d/nrn/mechanisms/SKv3_1.mod",
+      "author_equivalence_verified": false
+    },
+    {
+      "name": "SKv3_1_soma",
+      "status": "exact_variant_not_located",
+      "related_base": "SKv3_1",
+      "published_source": "https://github.com/Aman-A/TMSsim_Aberra2019/blob/8ec575a1f1042abc64ed05d74e5f7e6672375d5d/nrn/mechanisms/SKv3_1.mod",
+      "author_equivalence_verified": false
+    }
+  ],
+  "validation": {
+    "neuron_version": "9.0.1",
+    "all_12_sources_match_pinned_git_blobs": true,
+    "all_12_compile_and_insert": true,
+    "isolated_section_0_1ms_finite": true
+  },
+  "matching_passive_parameters": {
+    "e_pas_axonal": -64.601696,
+    "e_pas_somatic": -69.781406,
+    "e_pas_basal_and_apical": -63.118492
+  },
+  "parameter_warning": "Published conductance defaults are generic; the missing author-specific regional definitions may encode different parameters. No aliases or reconstructed variants were generated."
+}

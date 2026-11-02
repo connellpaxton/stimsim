@@ -1,0 +1,27 @@
+__pycache__/
+*.pyc
+.venv*
+.agents/
+.aws/
+.codex/
+.env
+.env.local
+outputs/
+mechanisms/x86_64/
+vendor/aberra2018/mechanisms/x86_64/
+vendor/aberra2018/cells/*/python_recordings
+vendor/m1_260015/sim/x86_64/
+
+# Generated mechanism builds and local datasets
+**/x86_64/
+**/aarch64/
+**/arm64/
+*.so
+*.dll
+*.o
+*.obj
+*.dylib
+.pytest_cache/
+coverage.xml
+.coverage
+data/

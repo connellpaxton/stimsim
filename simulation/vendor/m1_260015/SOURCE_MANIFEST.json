@@ -1,0 +1,673 @@
+{
+  "repository": "ModelDBRepository/260015",
+  "commit": "45e7d5c4ada0cd32da1a601b3f761fe001a9de39",
+  "modeldb_url": "https://modeldb.science/260015",
+  "files": [
+    {
+      "path": "sim/README",
+      "sha256": "1708c183ada46f5b7605b9f26e3fbaf8a7d4ec74eafb77b3b65065fb459acffe",
+      "size": 815,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/README"
+    },
+    {
+      "path": "sim/batch.py",
+      "sha256": "ce559f3f12edb6f8ab2266ea09fcbb6a5aea35734b8588b7a9ecd9b2e2f46e48",
+      "size": 20344,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/batch.py"
+    },
+    {
+      "path": "sim/cells/CSTR6.py",
+      "sha256": "b48ebfe95c725a7f0b40c397008c07474e57bcde0c4e8a74f0e42ab19e813583",
+      "size": 9991,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/cells/CSTR6.py"
+    },
+    {
+      "path": "sim/cells/CT6_reduced_cellParams.pkl",
+      "sha256": "9d936af9cd584c1b61bd3d68d43e71a405b6cde90659a25d0e22696189952775",
+      "size": 45599,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/cells/CT6_reduced_cellParams.pkl"
+    },
+    {
+      "path": "sim/cells/FS3.hoc",
+      "sha256": "3e44210cbcabfb900ca5e2b93291ad8498853f018579df500928adfa9cede744",
+      "size": 2927,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/cells/FS3.hoc"
+    },
+    {
+      "path": "sim/cells/IT2_reduced_cellParams.pkl",
+      "sha256": "067add89a84c372ac54671546b48b42342396dc366b0fa79dbf09e3ee7485499",
+      "size": 45620,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/cells/IT2_reduced_cellParams.pkl"
+    },
+    {
+      "path": "sim/cells/IT4_reduced_cellParams.pkl",
+      "sha256": "0a22392d2d650aac32d0510b9ae8a6fb66de5215eb2df3e4ed96e3a7659c3205",
+      "size": 46031,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/cells/IT4_reduced_cellParams.pkl"
+    },
+    {
+      "path": "sim/cells/IT5A_full_cellParams.pkl",
+      "sha256": "5e5ab15f75c10a4a85bcbe39962d4bda2471d7cd6eefb0a11d9e6fe9cd9057d3",
+      "size": 1889221,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/cells/IT5A_full_cellParams.pkl"
+    },
+    {
+      "path": "sim/cells/IT5A_reduced_cellParams.pkl",
+      "sha256": "dfc62e50b5e71efe5c23f58a66b0874f9ab5d4bbc926fef4b9a8b37ce18f9217",
+      "size": 45644,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/cells/IT5A_reduced_cellParams.pkl"
+    },
+    {
+      "path": "sim/cells/IT5B_full_cellParams.pkl",
+      "sha256": "41b45ad51149000efc0dbf9b553b28e6bc075728a32b017c615774f05989950f",
+      "size": 1889557,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/cells/IT5B_full_cellParams.pkl"
+    },
+    {
+      "path": "sim/cells/IT5B_reduced_cellParams.pkl",
+      "sha256": "5c5d5fb24f8223908c8bf6e543abbe0f69e2c182db4d33fdc699d8555cbad421",
+      "size": 45610,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/cells/IT5B_reduced_cellParams.pkl"
+    },
+    {
+      "path": "sim/cells/IT6_reduced_cellParams.pkl",
+      "sha256": "2601a926d1814092b6c46db5193d40fa80a79d57072161e6441823c91ea3dbd7",
+      "size": 45589,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/cells/IT6_reduced_cellParams.pkl"
+    },
+    {
+      "path": "sim/cells/IT_full_BS1578_cellParams.pkl",
+      "sha256": "882468a3c90ac0cad678c05f470269b100d07464ee3e8e2767fb652e1602486e",
+      "size": 2835192,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/cells/IT_full_BS1578_cellParams.pkl"
+    },
+    {
+      "path": "sim/cells/IT_full_BS1579_cellParams.pkl",
+      "sha256": "b8614936d8a0a89c97cd4ffe416ed50e7c204ceb8db6254e220fdb0dd8f67c57",
+      "size": 1864185,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/cells/IT_full_BS1579_cellParams.pkl"
+    },
+    {
+      "path": "sim/cells/ITcell.py",
+      "sha256": "9b738c9438d722937fec41e94a6022c24d69175b2bdd627fbc84d654a116fa29",
+      "size": 12489,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/cells/ITcell.py"
+    },
+    {
+      "path": "sim/cells/LTS3.hoc",
+      "sha256": "e927bf57626ac0581529cbfea9938d93090958b084e72caa62b1a67f727c7da5",
+      "size": 2727,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/cells/LTS3.hoc"
+    },
+    {
+      "path": "sim/cells/PT5B_full_cellParams.pkl",
+      "sha256": "c9f07ff408231254270c3da74c08baebea8047d5b43defe8f9320bf8d4499d3d",
+      "size": 2727499,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/cells/PT5B_full_cellParams.pkl"
+    },
+    {
+      "path": "sim/cells/PT5B_reduced_cellParams.pkl",
+      "sha256": "27bc1c39dfd7e3d40960b12da8ece382de52ff67858e0f38b2e7ceee8c3eaa67",
+      "size": 43665,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/cells/PT5B_reduced_cellParams.pkl"
+    },
+    {
+      "path": "sim/cells/PT_full_cellParams.pkl",
+      "sha256": "28d458e734a5684fd8d64237b0f38b747db4f88aed4a31cff45a6d1fc956de41",
+      "size": 2638056,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/cells/PT_full_cellParams.pkl"
+    },
+    {
+      "path": "sim/cells/PTcell.hoc",
+      "sha256": "3453840ef780d94ae949a6e705984b7ee6f1cf5dceeff16625ea41482c22b235",
+      "size": 147390,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/cells/PTcell.hoc"
+    },
+    {
+      "path": "sim/cells/PTcell.py",
+      "sha256": "88f34ed4f79009334650661c8c01ac2261e3b1c9aeb14431a71af924214701c2",
+      "size": 14006,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/cells/PTcell.py"
+    },
+    {
+      "path": "sim/cells/PV_simple_cellParams.pkl",
+      "sha256": "971134eb855cc35bd3a81cff4571df2401887b83c8772bb918a33782288762ba",
+      "size": 10311,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/cells/PV_simple_cellParams.pkl"
+    },
+    {
+      "path": "sim/cells/SOM_simple_cellParams.pkl",
+      "sha256": "3a59eeaf1509176f5b5687f66da675032c26fe83034ee5ed4788b66731092be7",
+      "size": 7356,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/cells/SOM_simple_cellParams.pkl"
+    },
+    {
+      "path": "sim/cells/SPI6.py",
+      "sha256": "4b61693db56f522261ca5e2b8c9c5a20e81270d4e8ffbd48161a4cd10433627a",
+      "size": 6656,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/cells/SPI6.py"
+    },
+    {
+      "path": "sim/cells/cellDensity.pkl",
+      "sha256": "3d4277f5fcd30b51fccc6c3ab8ba153fddfc00bf8e80cdd33d4393b9862a9c6c",
+      "size": 834,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/cells/cellDensity.pkl"
+    },
+    {
+      "path": "sim/cells/cellDensity.py",
+      "sha256": "afef4730421be4693a139ad7377f32dddda3c7052ec9e011347bc5d75714102e",
+      "size": 6928,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/cells/cellDensity.py"
+    },
+    {
+      "path": "sim/cells/ngf_cell.hoc",
+      "sha256": "33b6c960122543c9688ac73c5d100c8d3d7c1c50d962ff9c9ca24ba7cfb80323",
+      "size": 1011,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/cells/ngf_cell.hoc"
+    },
+    {
+      "path": "sim/cells/popColors.pkl",
+      "sha256": "0cd4b759d083da2b3ac281cce0a533d89a73fc0154e9e62fb0d251fae6c2a376",
+      "size": 760,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/cells/popColors.pkl"
+    },
+    {
+      "path": "sim/cells/vipcr_cell.hoc",
+      "sha256": "7d5ff8abae1664e708fe4a13c3a43683c70741e32c448ea1a55fd12bf50acbd7",
+      "size": 8835,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/cells/vipcr_cell.hoc"
+    },
+    {
+      "path": "sim/cfg.py",
+      "sha256": "38a825a17dd0b6949d54ad57174a9de92fa050c7b1da97d6c3a385082aacbc5a",
+      "size": 8738,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/cfg.py"
+    },
+    {
+      "path": "sim/conn/CT6_reduced_weightNorm.pkl",
+      "sha256": "48ff79e05a47a70aa08d1ca7460b6d0140f23b12105447122cb494779398229a",
+      "size": 418,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/conn/CT6_reduced_weightNorm.pkl"
+    },
+    {
+      "path": "sim/conn/IT2_reduced_weightNorm.pkl",
+      "sha256": "c4afb4d975037618a4fd105e40ac302c02b3544492cf848666296ec997ad1439",
+      "size": 418,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/conn/IT2_reduced_weightNorm.pkl"
+    },
+    {
+      "path": "sim/conn/IT4_reduced_weightNorm.pkl",
+      "sha256": "62876618b78102c4c376d12f8ebfc99af70c2097855d8b7e8852e0f7d1da8d8e",
+      "size": 421,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/conn/IT4_reduced_weightNorm.pkl"
+    },
+    {
+      "path": "sim/conn/IT5A_reduced_weightNorm.pkl",
+      "sha256": "aebaa9c50e63a8e1d7906d1cb8f72e205648b411c278048e883a2be1a7427697",
+      "size": 439,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/conn/IT5A_reduced_weightNorm.pkl"
+    },
+    {
+      "path": "sim/conn/IT5B_reduced_weightNorm.pkl",
+      "sha256": "665cd973827b3646df447024f69635aba2f436af3f75db0b1d79f4b494dfee72",
+      "size": 423,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/conn/IT5B_reduced_weightNorm.pkl"
+    },
+    {
+      "path": "sim/conn/IT6_reduced_weightNorm.pkl",
+      "sha256": "7eec4e9b89b611b617e9d12cd48dbface34830ba1e874d7539f78379f749221f",
+      "size": 419,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/conn/IT6_reduced_weightNorm.pkl"
+    },
+    {
+      "path": "sim/conn/IT_full_BS1579_weightNorm.pkl",
+      "sha256": "d6791db9f347cc2e9c06e9bc1adbd9cad4791a6819b961acda2416c1cb1d8493",
+      "size": 17918,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/conn/IT_full_BS1579_weightNorm.pkl"
+    },
+    {
+      "path": "sim/conn/PT5B_full_weightNorm.pkl",
+      "sha256": "fce2e63c2df441feef741b0e04a8a3a1556df1f073788c5e44755be7c9611057",
+      "size": 40623,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/conn/PT5B_full_weightNorm.pkl"
+    },
+    {
+      "path": "sim/conn/PT5B_reduced_weightNorm.pkl",
+      "sha256": "7d8134c443a70b8d258b8cad1cae3eddde8bc732287b92062deb3b5753db2537",
+      "size": 482,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/conn/PT5B_reduced_weightNorm.pkl"
+    },
+    {
+      "path": "sim/conn/PV_simple_weightNorm.pkl",
+      "sha256": "be82716f5d6bee04209ccdd50c37191e2c8ce2fc78d4ab36d9f97b38491de332",
+      "size": 216,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/conn/PV_simple_weightNorm.pkl"
+    },
+    {
+      "path": "sim/conn/SOM_simple_weightNorm.pkl",
+      "sha256": "412aec582c037417962e37b96b313f3f1ceba564c3080de04f89dc882ce420c1",
+      "size": 222,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/conn/SOM_simple_weightNorm.pkl"
+    },
+    {
+      "path": "sim/conn/conn.pkl",
+      "sha256": "dd1456329309212623e097cfb01dbc9ed4acc7fc34317af496a333cb28bc0675",
+      "size": 22978,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/conn/conn.pkl"
+    },
+    {
+      "path": "sim/conn/conn.py",
+      "sha256": "85db5a008913784a361dd1b61031c134c5f6eb92feb5f386a209f938cb5524c3",
+      "size": 30609,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/conn/conn.py"
+    },
+    {
+      "path": "sim/conn/conn_dend.py",
+      "sha256": "512ef3806ea3cec1db014fa8b694d020cdcc8a4e48ba437c1ffefc5c3ae85575",
+      "size": 17789,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/conn/conn_dend.py"
+    },
+    {
+      "path": "sim/conn/conn_dend_IT.json",
+      "sha256": "7b3b6253d1f8efb3f56bc52da2aa08658ef14b4c6a23eabe38f7c412b6c3e89b",
+      "size": 13601,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/conn/conn_dend_IT.json"
+    },
+    {
+      "path": "sim/conn/conn_dend_PT.json",
+      "sha256": "7b3d7f2f25fa09ab4cadb1359cf104fb7da81f0cf61bcce922944078d5f6a042",
+      "size": 6212,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/conn/conn_dend_PT.json"
+    },
+    {
+      "path": "sim/conn/conn_long.pkl",
+      "sha256": "67b86004c9259fe0f9cb0bd85647be9fd0bdd5964fdff05c21b716873e5619a9",
+      "size": 6247,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/conn/conn_long.pkl"
+    },
+    {
+      "path": "sim/conn/conn_long.py",
+      "sha256": "022859b2ef4f3c8233ba6ccdde1e0870d0718a1114221b8ed9b12c42ac60945c",
+      "size": 32671,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/conn/conn_long.py"
+    },
+    {
+      "path": "sim/init.py",
+      "sha256": "ce6420f2d8ba3fa81fa6287baea0632702ade55073daa68119cd9da007464aea",
+      "size": 3631,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/init.py"
+    },
+    {
+      "path": "sim/mod/HCN1.mod",
+      "sha256": "7aaec693116b7c7d45c33bffe04b15691b48f6f6bacb14dc1221f94c0afc99a1",
+      "size": 884,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/mod/HCN1.mod"
+    },
+    {
+      "path": "sim/mod/IC.mod",
+      "sha256": "6c1e3f876b6551b521af36928144890ca87a406045c894ac2e078bd3e89372d0",
+      "size": 1616,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/mod/IC.mod"
+    },
+    {
+      "path": "sim/mod/IKsin.mod",
+      "sha256": "a35c6b2c1ea09c7d1a1e1b3e267d4f5e9df7cdd54849d5aeb3b616849a29242d",
+      "size": 1063,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/mod/IKsin.mod"
+    },
+    {
+      "path": "sim/mod/MyExp2SynBB.mod",
+      "sha256": "6bdccf27fb1778051788920261ea6263d85aaf1240563cf9f1b90ed2ef0b19e7",
+      "size": 964,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/mod/MyExp2SynBB.mod"
+    },
+    {
+      "path": "sim/mod/MyExp2SynNMDABB.mod",
+      "sha256": "27546072fd75f12b72755b27916b2d5eea56b8af2fa96bd665bbe00cf4395518",
+      "size": 1844,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/mod/MyExp2SynNMDABB.mod"
+    },
+    {
+      "path": "sim/mod/Nca.mod",
+      "sha256": "8eff30883dbc81f14bc961108fe8d19da8249ef2af62b89679ccdc16125ca19c",
+      "size": 2294,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/mod/Nca.mod"
+    },
+    {
+      "path": "sim/mod/ar_traub.mod",
+      "sha256": "a3f0220d63595842246eda7730d72b23bd11c71c9dd7cf52f9e67515a9f2ab03",
+      "size": 851,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/mod/ar_traub.mod"
+    },
+    {
+      "path": "sim/mod/cadad.mod",
+      "sha256": "1774a1e58f5aa3061049244c48e91dcee144236f76551d3fdf8864f855156277",
+      "size": 1614,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/mod/cadad.mod"
+    },
+    {
+      "path": "sim/mod/cadyn.mod",
+      "sha256": "0edaa1db5dc4aab40132231d0a09fb95935870c18f66e1359d4eb6ec579c2b35",
+      "size": 863,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/mod/cadyn.mod"
+    },
+    {
+      "path": "sim/mod/cagk.mod",
+      "sha256": "869b219257f0053c7ae09c6270855077f172e9dd7b03860cb0594de9777c5ef1",
+      "size": 1407,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/mod/cagk.mod"
+    },
+    {
+      "path": "sim/mod/cal_mh.mod",
+      "sha256": "1a1ac9b8eff995897db27cb18b9f8e4ef87cccaa418b7d362d5422106fec9942",
+      "size": 2477,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/mod/cal_mh.mod"
+    },
+    {
+      "path": "sim/mod/cal_mig.mod",
+      "sha256": "34b324d7e6b5f8cc0b0d949252b0b67a9ce991fe0bd3885603b188bd12841272",
+      "size": 2753,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/mod/cal_mig.mod"
+    },
+    {
+      "path": "sim/mod/can_mig.mod",
+      "sha256": "f81892e24dee6bfa6d99f7ecf71db1c37c661e06bbe0527079a7c664c1abeef6",
+      "size": 2518,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/mod/can_mig.mod"
+    },
+    {
+      "path": "sim/mod/cancr.mod",
+      "sha256": "2785d88485337009abb21d828971eff3a5f1c92afb62772d4bdb1c17fbb55856",
+      "size": 2308,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/mod/cancr.mod"
+    },
+    {
+      "path": "sim/mod/canin.mod",
+      "sha256": "78c0218f4dd0f6b48d8b63ec80bd72f5d21b8ece0ef71381375871500649195f",
+      "size": 2201,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/mod/canin.mod"
+    },
+    {
+      "path": "sim/mod/cat_mig.mod",
+      "sha256": "27033ef146138fc8c32c941eeacd3ce2855bf7dd1ad0063b947668996eaf6dc1",
+      "size": 2188,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/mod/cat_mig.mod"
+    },
+    {
+      "path": "sim/mod/cat_traub.mod",
+      "sha256": "b86d390b08108e2e11c1da1df49bcdc792387e47840d31ac87521cbb166cc4f0",
+      "size": 1297,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/mod/cat_traub.mod"
+    },
+    {
+      "path": "sim/mod/catcb.mod",
+      "sha256": "23a33207aa8a7b102ab98b4ac9c13eff30e0814654add44703843038c6e06402",
+      "size": 1734,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/mod/catcb.mod"
+    },
+    {
+      "path": "sim/mod/ch_CavL.mod",
+      "sha256": "464f8fb4dd4bbf514be7ad0ac7ee3f450061aaccc56e7b7fb0a9dc7738c52088",
+      "size": 2072,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/mod/ch_CavL.mod"
+    },
+    {
+      "path": "sim/mod/ch_CavN.mod",
+      "sha256": "305a5809420f6e0b78df32ddeb593905b042af7a26b98d215576d294d9823eee",
+      "size": 3145,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/mod/ch_CavN.mod"
+    },
+    {
+      "path": "sim/mod/ch_KCaS.mod",
+      "sha256": "7efc5e6f4ccb51d47ae4f2230933d780129ae2b8e4d05e8b82e25c2db1cd3e5f",
+      "size": 1803,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/mod/ch_KCaS.mod"
+    },
+    {
+      "path": "sim/mod/ch_Kdrfastngf.mod",
+      "sha256": "b62a44a1ecab8001715333749f1101893f1475dbfdbdd4329bfd76cf6a51b77b",
+      "size": 2746,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/mod/ch_Kdrfastngf.mod"
+    },
+    {
+      "path": "sim/mod/ch_KvAngf.mod",
+      "sha256": "ec177bba7cbd2d03af237197f6fcb38e23800d61aa981de90c8d8008a57662cd",
+      "size": 1946,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/mod/ch_KvAngf.mod"
+    },
+    {
+      "path": "sim/mod/ch_KvCaB.mod",
+      "sha256": "3885d758d6e9727bd7fafbc117e7d8ec8363416fd4a450285cb6bab6a7754524",
+      "size": 2399,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/mod/ch_KvCaB.mod"
+    },
+    {
+      "path": "sim/mod/ch_Navngf.mod",
+      "sha256": "17f97d810280dafd091ec0d68a1c0160fff328ecf38eb19fdcf145f25dd552e6",
+      "size": 3088,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/mod/ch_Navngf.mod"
+    },
+    {
+      "path": "sim/mod/ch_leak.mod",
+      "sha256": "d93174b2820f54c6d66e0df4d71e66e7a31df43e0747c7b5fa8eaa9b1e770871",
+      "size": 1230,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/mod/ch_leak.mod"
+    },
+    {
+      "path": "sim/mod/dipole.mod",
+      "sha256": "9869f1d1815095a69f2beac5f81d5d77ee271353326a722f8c9b630da2fcdac8",
+      "size": 889,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/mod/dipole.mod"
+    },
+    {
+      "path": "sim/mod/dipole_pp.mod",
+      "sha256": "6fbeefeca1f293c7465f3cc938c0acd02b7585885d9a17ec87467ec5cec8cae2",
+      "size": 1020,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/mod/dipole_pp.mod"
+    },
+    {
+      "path": "sim/mod/gabab.mod",
+      "sha256": "4bfe42cdd75be08fb42906671d4a7d8bd93f5b8f17438d0bf2e3efd6fa851776",
+      "size": 5143,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/mod/gabab.mod"
+    },
+    {
+      "path": "sim/mod/ghk.inc",
+      "sha256": "04c17de2c72f44ec64bdaaa935e7ece3a85abf76ff7abea34b98acb616016a9f",
+      "size": 740,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/mod/ghk.inc"
+    },
+    {
+      "path": "sim/mod/h_BS.mod",
+      "sha256": "add7628e9887b7ec3bed118de1714e39f203819c4e202b8c98dec84511a535ed",
+      "size": 2583,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/mod/h_BS.mod"
+    },
+    {
+      "path": "sim/mod/h_harnett.mod",
+      "sha256": "4da99b7efeb2ca621effbd253b83de77c7e4ac65f79788d0ec83ad13f0c47370",
+      "size": 1429,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/mod/h_harnett.mod"
+    },
+    {
+      "path": "sim/mod/h_kole.mod",
+      "sha256": "cb67fe12c02c0bb8beccfff7d4f1a3fdb7022800ca315e66d745c16698d373a9",
+      "size": 1669,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/mod/h_kole.mod"
+    },
+    {
+      "path": "sim/mod/h_migliore.mod",
+      "sha256": "9a78cf65f9608e85f82bbb29fc12ca7b4a00f3ace07698678999da52fe414485",
+      "size": 1480,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/mod/h_migliore.mod"
+    },
+    {
+      "path": "sim/mod/hin.mod",
+      "sha256": "6b8721bed869eab6f25a737fc2b3289f3b6a08b9fa6724f2c81d341adb8854f7",
+      "size": 1184,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/mod/hin.mod"
+    },
+    {
+      "path": "sim/mod/ican_sidi.mod",
+      "sha256": "7dd47ccf29d4dfd1fd0cc2b7ef1d1ad8f527b70631beb10ae7065f48d5e4a77a",
+      "size": 2722,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/mod/ican_sidi.mod"
+    },
+    {
+      "path": "sim/mod/iccr.mod",
+      "sha256": "1b4b717df31fa39c87f85ab2139bb9347863420842ec7f0fb6a68d8d75855740",
+      "size": 1209,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/mod/iccr.mod"
+    },
+    {
+      "path": "sim/mod/iconc_Ca.mod",
+      "sha256": "b8120de08a892e20d2f668249c155d325bfbe93a0a2b6285fd11eaaa4e357846",
+      "size": 1798,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/mod/iconc_Ca.mod"
+    },
+    {
+      "path": "sim/mod/ikscr.mod",
+      "sha256": "e0b221722a2b7b414b8351dd525f4dfc1f47262e743d415b52603cc9d0fe1525",
+      "size": 1075,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/mod/ikscr.mod"
+    },
+    {
+      "path": "sim/mod/kBK.mod",
+      "sha256": "7dea78c7537f92c5b8c8bfae0bcbfd814ddbbd78f0807938bfe05158dc19e377",
+      "size": 3003,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/mod/kBK.mod"
+    },
+    {
+      "path": "sim/mod/kap_BS.mod",
+      "sha256": "5d35229d4fbf880969d89e4cdf2dbb1d5f17483193562453684e7ef32ea82afa",
+      "size": 2786,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/mod/kap_BS.mod"
+    },
+    {
+      "path": "sim/mod/kapcb.mod",
+      "sha256": "dae40deecadd96c09fb14a3d5cf177cc464874ba17418781796a7d27868324fc",
+      "size": 3384,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/mod/kapcb.mod"
+    },
+    {
+      "path": "sim/mod/kapin.mod",
+      "sha256": "bfb3472d9c6b26b3e244a542bfcf3c355dd384232bfb180a83dbcf4f8b73b09d",
+      "size": 3300,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/mod/kapin.mod"
+    },
+    {
+      "path": "sim/mod/kca.mod",
+      "sha256": "7ca4e3cc1f6bcad0492e44026a29d34d00f28305a04d8fd5a6f4a0801b8da718",
+      "size": 3147,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/mod/kca.mod"
+    },
+    {
+      "path": "sim/mod/kctin.mod",
+      "sha256": "c830fdca791402dee6f12763e1e63b9d60833110b0501665a55027a1c5282d45",
+      "size": 2059,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/mod/kctin.mod"
+    },
+    {
+      "path": "sim/mod/kdmc_BS.mod",
+      "sha256": "7e7635f2b94aaeac22969f317d9ca745985744f49ad03cf9d951c2f1b52ac45c",
+      "size": 2775,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/mod/kdmc_BS.mod"
+    },
+    {
+      "path": "sim/mod/kdr_BS.mod",
+      "sha256": "9520f4db4995e13e685b8ccb9af707d742c64517af1d18797934263863ffca92",
+      "size": 2039,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/mod/kdr_BS.mod"
+    },
+    {
+      "path": "sim/mod/kdrcr.mod",
+      "sha256": "137ee80e0fa51ad3511a210e8485161ce542874958abbda0f9a2f4a35c3b292e",
+      "size": 1083,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/mod/kdrcr.mod"
+    },
+    {
+      "path": "sim/mod/kdrin.mod",
+      "sha256": "b8d235c3fbaee15a2a4b257dc5914fdf149b8805cac657ace7829a79868dcd17",
+      "size": 1071,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/mod/kdrin.mod"
+    },
+    {
+      "path": "sim/mod/km.mod",
+      "sha256": "fc13da2096a4ca2783c5c801c31c9be48e9090013e9942d41de37372e7251278",
+      "size": 4078,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/mod/km.mod"
+    },
+    {
+      "path": "sim/mod/kv.mod",
+      "sha256": "7162ee88b7a86a91140d614692530214f95fb5d613d0167a8c4f2b6e908d8e2c",
+      "size": 4058,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/mod/kv.mod"
+    },
+    {
+      "path": "sim/mod/misc.h",
+      "sha256": "385b22b05cc14ea302c0e96dbee9c9d6361cfde1843de06f791cef130f76e7e6",
+      "size": 4323,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/mod/misc.h"
+    },
+    {
+      "path": "sim/mod/my_exp2syn.mod",
+      "sha256": "ed09c01a63739f8405e63213449fd29a4c94ae930cf2d3378af4272c240b1b35",
+      "size": 1652,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/mod/my_exp2syn.mod"
+    },
+    {
+      "path": "sim/mod/nafcr.mod",
+      "sha256": "eec9890c1823b96f5dd58ffcbca71f0c0714a628cc08524a98242b39f9aa87d6",
+      "size": 1468,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/mod/nafcr.mod"
+    },
+    {
+      "path": "sim/mod/nafx.mod",
+      "sha256": "9c6a470e4c67117082fb5d7f4cbf53edc066d2273b4d22eeeb5cdf4e3d15c2ff",
+      "size": 2967,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/mod/nafx.mod"
+    },
+    {
+      "path": "sim/mod/nap_sidi.mod",
+      "sha256": "5a02fa1cb70186e13b1fe4167fc164b2243d5eb5d7de1d33c8b1f6f19f4777b5",
+      "size": 1819,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/mod/nap_sidi.mod"
+    },
+    {
+      "path": "sim/mod/nax_BS.mod",
+      "sha256": "5d294cb36c1f06221ae80bfec8df677dfb98f5e41a6f57362c11b6616055b535",
+      "size": 2847,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/mod/nax_BS.mod"
+    },
+    {
+      "path": "sim/mod/naz.mod",
+      "sha256": "a894c57ae2504a12aa45068855cda2ad31fc50ffed1b3baa8dcb8ed69f352848",
+      "size": 2814,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/mod/naz.mod"
+    },
+    {
+      "path": "sim/mod/parameters.multi",
+      "sha256": "7c769620b1ba2cb91ae0a7c91e489e84ff7c7c6bbb314952d6f84456ed53bf41",
+      "size": 1424,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/mod/parameters.multi"
+    },
+    {
+      "path": "sim/mod/savedist.mod",
+      "sha256": "86b4db322c3f59d9a25b42f5a8aa93006d1bb0a2b404559108fc03f3f5d6e3a5",
+      "size": 505,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/mod/savedist.mod"
+    },
+    {
+      "path": "sim/mod/vecstim.mod",
+      "sha256": "d915b8585d1f949f6dbb46e358f779d1ce0f56132c0b147df4abce01eac2623c",
+      "size": 1338,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/mod/vecstim.mod"
+    },
+    {
+      "path": "sim/netParams.py",
+      "sha256": "12f43d0513e103e04696142fa10c91fab10207cbd36484aba4248c6d77f247b8",
+      "size": 40284,
+      "url": "https://raw.githubusercontent.com/ModelDBRepository/260015/45e7d5c4ada0cd32da1a601b3f761fe001a9de39/sim/netParams.py"
+    }
+  ]
+}

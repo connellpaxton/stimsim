@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NeuronSim · morphology inspection</title>
+<style>
+  :root { color-scheme: light dark; font: 15px system-ui, sans-serif; }
+  body { max-width: 1100px; margin: auto; padding: 24px; }
+  h1 { margin-bottom: 6px; } p { line-height: 1.5; }
+  canvas { display: block; width: 100%; height: 560px; border: 1px solid #8887; touch-action: none; }
+  .controls { display: flex; flex-wrap: wrap; gap: 16px; margin: 14px 0; align-items: center; }
+  button, select, input { font: inherit; padding: 6px; }
+  table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+  th, td { text-align: left; padding: 10px 6px; border-bottom: 1px solid #8885; }
+  .swatch { display: inline-block; width: 12px; height: 12px; margin-right: 7px; }
+  .legend { overflow-wrap: anywhere; } .legend p { margin: 7px 0; }
+  @media(max-width:600px) { body { padding: 12px; } canvas { height: 400px; } table { font-size: 12px; } }
+</style>
+<h1>NeuronSim</h1>
+<p>Three reconstructed layer-5 cells and the contact locations supplied with the original example. Coordinates are interpreted as µm in SWC and nm in the connectivity tables.</p>
+<div class="controls">
+  <label>View <select id="cell"><option value="all">All three cells</option></select></label>
+  <label><input type="checkbox" id="axon" checked> Axons</label>
+  <label><input type="checkbox" id="dendrite" checked> Dendrites</label>
+  <label><input type="checkbox" id="contacts" checked> Contacts</label>
+  <button id="reset" type="button">Reset view</button>
+</div>
+<canvas id="morphology" role="img" aria-label="Rotatable 3D view of three layer-5 neuron morphologies"></canvas>
+<p>Drag to rotate · scroll to zoom. White/black markers show somas; paired squares mark presynaptic and postsynaptic contact locations. Dashed connectors show recorded contact pairs.</p>
+<div class="legend" id="legend"></div>
+<h2>Archive inventory</h2>
+<p id="totals"></p>
+<p id="validation"></p>
+<table><thead><tr><th>Layer folder</th><th>Morphologies</th><th>SWC nodes</th><th>Cable length (mm)</th></tr></thead><tbody id="layers"></tbody></table>
+<table><thead><tr><th>Contact table</th><th>Records</th><th>Both morphologies supplied</th><th>Both in named layer</th></tr></thead><tbody id="tables"></tbody></table>
+<h2>Run status</h2>
+<p>The original active NEURON model requires custom mechanisms absent from this archive. The separate passive cable demonstration uses these geometries with simplified membrane physics; it does not reproduce the original model or predict network spiking.</p>
+<section id="passive" hidden><h2>Passive current-clamp demonstration</h2><p>Each sample cell is stimulated independently with 1 nA for 1 ms, beginning at 1 ms. No synapses or active channels are included. The original example stimulates only the first cell.</p><div id="traces"></div></section>
+<script id="data" type="application/json">__DATA__</script>
+<script>
+'use strict';
+const data = JSON.parse(document.getElementById('data').textContent);
+const canvas = document.getElementById('morphology'), ctx = canvas.getContext('2d');
+const select = document.getElementById('cell');
+const colors = ['#558de8', '#ed9a43', '#b27be0'];
+const format = n => n.toLocaleString();
+data.cells.forEach((cell, i) => {
+  const option = document.createElement('option'); option.value = cell.id; option.textContent = 'Cell ' + (i + 1); select.append(option);
+  const item = document.createElement('p'), swatch = document.createElement('span');
+  swatch.className = 'swatch'; swatch.style.background = colors[i]; item.append(swatch, 'Cell ' + (i + 1) + ' · ' + cell.id + ' · ' + format(cell.xyz.length) + ' nodes');
+  document.getElementById('legend').append(item);
+});
+const summary = data.summary;
+document.getElementById('totals').textContent = format(summary.morphology_count) + ' morphologies · ' + format(summary.unique_contacts) + ' unique contact records · ' + format(summary.unique_contacts_with_both_morphologies) + ' contacts with both morphologies supplied.';
+document.getElementById('validation').textContent = format(summary.validated_morphology_count) + ' morphologies pass tree and positive-radius checks; ' + format(summary.invalid_morphologies.length) + ' need review. ' + format(summary.unique_contacts_with_both_validated_morphologies) + ' contacts have two morphologies that pass these checks.';
+if (data.passive) {
+  document.getElementById('passive').hidden = false;
+  for (const c of data.passive.cells) {
+    const img = document.createElement('img'); img.src = 'passive_' + c.cell_id + '.svg'; img.alt = 'Passive cable voltage response for ' + c.cell_id; img.style.width = '100%';
+    const caption = document.createElement('p'); caption.textContent = c.cell_id + ': ' + format(c.compartments) + ' compartments; peak soma voltage ' + c.peak_soma_mv.toFixed(2) + ' mV. ' + c.amplitude_na + ' nA pulse; dt=' + c.dt_ms + ' ms.';
+    document.getElementById('traces').append(caption, img);
+  }
+}
+for (const [layer, values] of Object.entries(summary.layers)) {
+  const tr = document.createElement('tr');
+  for (const value of [layer, format(values.cells), format(values.nodes), (values.cable_length_um / 1000).toFixed(1)]) { const td = document.createElement('td'); td.textContent = value; tr.append(td); }
+  document.getElementById('layers').append(tr);
+}
+for (const [name, values] of Object.entries(summary.tables)) {
+  const tr = document.createElement('tr');
+  for (const value of [name, format(values.contacts), format(values.contacts_with_both_morphologies), format(values.contacts_with_both_in_named_layer)]) { const td = document.createElement('td'); td.textContent = value; tr.append(td); }
+  document.getElementById('tables').append(tr);
+}
+const bounds = [[Infinity, -Infinity], [Infinity, -Infinity], [Infinity, -Infinity]];
+for (const c of data.cells) for (const p of c.xyz) for (let k = 0; k < 3; k++) { bounds[k][0] = Math.min(bounds[k][0], p[k]); bounds[k][1] = Math.max(bounds[k][1], p[k]); }
+const center = bounds.map(b => (b[0] + b[1]) / 2), span = Math.max(...bounds.map(b => b[1] - b[0]));
+let yaw = -.25, pitch = .15, zoom = 1, drag = null;
+function project(p) {
+  const x = p[0] - center[0], y = p[1] - center[1], z = p[2] - center[2];
+  const rx = x * Math.cos(yaw) + z * Math.sin(yaw), rz = -x * Math.sin(yaw) + z * Math.cos(yaw);
+  const ry = y * Math.cos(pitch) - rz * Math.sin(pitch), scale = Math.min(canvas.clientWidth, canvas.clientHeight) * .8 / span * zoom;
+  return [canvas.clientWidth / 2 + rx * scale, canvas.clientHeight / 2 + ry * scale];
+}
+function draw() {
+  const ratio = devicePixelRatio || 1, width = canvas.clientWidth, height = canvas.clientHeight;
+  canvas.width = width * ratio; canvas.height = height * ratio; ctx.scale(ratio, ratio); ctx.clearRect(0, 0, width, height);
+  const dark = matchMedia('(prefers-color-scheme: dark)').matches, foreground = dark ? '#f0f0f0' : '#20242a';
+  data.cells.forEach((cell, i) => {
+    if (select.value !== 'all' && select.value !== cell.id) return;
+    ctx.strokeStyle = colors[i]; ctx.lineWidth = .8; ctx.globalAlpha = .8; ctx.beginPath();
+    cell.xyz.forEach((p, j) => {
+      if (cell.parent[j] < 0) return;
+      if (cell.types[j] === 2 && !document.getElementById('axon').checked) return;
+      if (cell.types[j] !== 2 && !document.getElementById('dendrite').checked) return;
+      const a = project(p), b = project(cell.xyz[cell.parent[j]]); ctx.moveTo(...a); ctx.lineTo(...b);
+    }); ctx.stroke(); ctx.globalAlpha = 1;
+    const root = cell.parent.indexOf(-1), p = project(cell.xyz[root]);
+    ctx.fillStyle = foreground; ctx.beginPath(); ctx.arc(...p, 4, 0, Math.PI * 2); ctx.fill();
+    ctx.font = '14px system-ui'; ctx.fillText('Cell ' + (i + 1), p[0] + 8, p[1] - 8);
+  });
+  if (document.getElementById('contacts').checked) for (const contact of summary.sample_contacts) {
+    if (select.value !== 'all' && ![contact.pre, contact.post].includes(select.value)) continue;
+    const a = project(contact.xyz_um.pre), b = project(contact.xyz_um.post);
+    ctx.strokeStyle = foreground; ctx.lineWidth = 1.5; ctx.setLineDash([3, 3]); ctx.beginPath(); ctx.moveTo(...a); ctx.lineTo(...b); ctx.stroke(); ctx.setLineDash([]);
+    ctx.fillStyle = foreground; ctx.fillRect(a[0]-3, a[1]-3, 6, 6); ctx.strokeRect(b[0]-5, b[1]-5, 10, 10);
+  }
+  ctx.fillStyle = foreground; ctx.font = '13px system-ui';
+  const bar = Math.min(100, span / 4), px = bar * Math.min(width, height) * .8 / span * zoom;
+  ctx.strokeStyle = foreground; ctx.beginPath(); ctx.moveTo(20, height-28); ctx.lineTo(20+px, height-28); ctx.stroke(); ctx.fillText(bar.toFixed(0) + ' µm', 20, height-8);
+}
+canvas.addEventListener('pointerdown', e => { drag = [e.clientX, e.clientY]; canvas.setPointerCapture(e.pointerId); });
+canvas.addEventListener('pointermove', e => { if (!drag) return; yaw += (e.clientX-drag[0])*.008; pitch += (e.clientY-drag[1])*.008; drag = [e.clientX,e.clientY]; draw(); });
+canvas.addEventListener('pointerup', () => drag = null); canvas.addEventListener('pointercancel', () => drag = null);
+canvas.addEventListener('wheel', e => { e.preventDefault(); zoom = Math.max(.2,Math.min(8,zoom*Math.exp(-e.deltaY*.001))); draw(); }, {passive:false});
+for (const id of ['cell', 'axon', 'dendrite', 'contacts']) document.getElementById(id).addEventListener('change', draw);
+document.getElementById('reset').addEventListener('click', () => { yaw=-.25; pitch=.15; zoom=1; draw(); });
+new ResizeObserver(draw).observe(canvas); matchMedia('(prefers-color-scheme: dark)').addEventListener('change', draw); draw();
+</script>
+</html>
