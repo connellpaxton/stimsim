@@ -1,5 +1,7 @@
 # Full eligible Minnie65 v1300 cohort
 
+Historical preparation report from the separate NeuronSim workspace. The completed simulation is described in [full results](NAS_FULL_RESULTS.md); current-checkout checks are in [validation status](VALIDATION.md). Artifact links refer to [external locations](ARTIFACT_LOCATIONS.md).
+
 The original serial-construction run was replaced by the [validated 96-process MPI workflow](MPI_CONSTRUCTION.md). All cells and contacts were constructed in 91.23 seconds, and the one-second experiment completed successfully. See the [full results](NAS_FULL_RESULTS.md). The original workspace below is retained for preparation provenance and partial serial-construction logs.
 
 The original full-cohort test pipeline was launched on Genoa on October 29, 2026 UTC. Preparation produced **70,995 neurons and 13,309,933 observed internal contacts** across 8,886,062 directed cell pairs. The completed MPI replacement uses the same published ModelDB 241165 profile, E/I synapses and one-second stimulus protocol as the smaller trial, with 96 MPI ranks and 100 ms control/replay checks.
@@ -20,16 +22,16 @@ The dendrite export labels its root as dendrite type 3. For 69,284 cells, that r
 
 The aggregate wiring uses `-1` where a nucleus annotation is absent: 36,563 retained pairs / 48,254 contacts have at least one such annotation. These rows retain their original fields and use the independently verified v1300 root identity. Every supplied, nonmissing nucleus ID matched metadata. Actual annotated conflicts cause preparation to fail.
 
-The first validation attempts exposed the root-label convention and missing annotation sentinel; their logs remain on Genoa. The successful wiring pass reused checksum-verified prepared morphologies with `--connections-only`. The 33 repository tests pass, including source-integrity, deterministic parallel preparation and guarded root-normalization checks. A normalized dendrite tree also imported and ran 25 ms with the published NEURON profile and finite voltages.
+The first validation attempts exposed the root-label convention and missing annotation sentinel; their logs were retained on Genoa. The successful wiring pass reused checksum-verified prepared morphologies with `--connections-only`. At that preparation stage, 33 tests passed, including source-integrity, deterministic parallel preparation and guarded root-normalization checks. A normalized dendrite tree also imported and ran 25 ms with the published NEURON profile and finite voltages.
 
-## Monitor and inspect
+## Inspect archived preparation
 
 - Genoa workspace: `/home/shisoft/NeuronSim-nas-full.0UyboUvY`
 - NAS experiment: `/mnt/nas-storage/NeuronSim/experiments/minnie65_v1300_full_0UyboUvY`
-- Local preparation summary: [summary.json](../outputs/nas_full_trial/prepared/data/summary.json)
-- Exact commands: [run_manifest.json](../outputs/nas_full_trial/run_manifest.json)
-- Background pipeline: [run_full_trial.py](../outputs/nas_full_trial/run_full_trial.py)
+- Local preparation summary: [summary.json](ARTIFACT_LOCATIONS.md#full-cohort-preparation)
+- Exact commands: [run_manifest.json](ARTIFACT_LOCATIONS.md#full-cohort-preparation)
+- Replaced serial pipeline: [run_full_trial.py](ARTIFACT_LOCATIONS.md#full-cohort-preparation)
 
-`SIMULATION_STATUS.json` records the pipeline stage on Genoa and NAS. Genoa's `simulation.log` records cell construction and integration progress. The pipeline saves finite-output checks, exact replay comparison, comparison with the previous column's electrical parameters, resource measurements and an archive inventory. It writes `EXPERIMENT_COMPLETE.json` only after successful simulation, validation and archive verification; otherwise its status becomes `failed` with the error preserved. Final full-cohort runtime and memory use are not yet measured.
+The serial attempt was replaced by the completed MPI run; it is not the active execution path. Its prepared inputs were reused. The completed experiment is archived at `/mnt/nas-storage/NeuronSim/experiments/minnie65_v1300_full_mpi96_FzV1DzbT`, with `EXPERIMENT_COMPLETE.json`, validation, recordings and a file inventory. Main integration took **4,175.29 s** and maximum sampled aggregate PSS was **115.00 GiB**; see [measurement definitions and limits](NAS_FULL_RESULTS.md).
 
-Prepared shapes/tables are archived before simulation. Results will appear under NAS `results/`; the original download remains under `datasets/minnie65/v1300`. The pipeline is independent of the chat session.
+The original download remains under `/mnt/nas-storage/NeuronSim/datasets/minnie65/v1300`. To start another run, use the documented [full-Minnie entry point](DATASET_ENTRY_POINTS.md#full-eligible-minnie65-v1300-cohort), rather than restarting the replaced serial pipeline.

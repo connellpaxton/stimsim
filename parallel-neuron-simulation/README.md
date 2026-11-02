@@ -8,7 +8,7 @@ The `neuronsim` package imports per-cell SWCs, applies a checksum-pinned publish
 
 Start with [data provenance and exact source URLs](docs/DATA_PROVENANCE.md), the [code walkthrough](docs/CODE_WALKTHROUGH.md), and [import notes](docs/IMPORT_NOTES.md).
 
-To inspect the computation itself, follow the [critical simulation code path](docs/CRITICAL_SIMULATION_PATH.md). Its source blocks are marked `SIMULATION CORE`.
+To inspect the computation itself, follow the [critical simulation code path](docs/CRITICAL_SIMULATION_PATH.md). Its source blocks are marked `SIMULATION CORE`. See [validation status](docs/VALIDATION.md) for what was executed in this checkout and [artifact locations](docs/ARTIFACT_LOCATIONS.md) for external historical evidence.
 
 ## Choose a dataset
 

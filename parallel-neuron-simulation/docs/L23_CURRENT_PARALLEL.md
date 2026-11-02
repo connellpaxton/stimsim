@@ -1,6 +1,8 @@
-# L23 data with the current parallel model
+# Historical L23 parallel-model result
 
-The supplied `SWC_L23/` geometry and `L23_all.csv` contacts completed **1,000 ms of model time** on Genoa with **32 native NEURON threads in one process**. This run retains the current published ModelDB 241165 `cACint209` profile and original-wrapper discretization used in the recent three-neuron comparison. It does not use the different pyramidal-cell profile from the earlier L23 benchmark.
+This report records the full 313-cell NeuronSim experiment before the stimsim import. The filename is retained for existing references. The named [L23 entry point](DATASET_ENTRY_POINTS.md#original-three-neuron-and-l23-datasets) now exposes the same electrical/coordinate-contact assumptions; only a small subset was rerun during the refactor, as documented in [validation status](VALIDATION.md). Historical evidence is [external](ARTIFACT_LOCATIONS.md#l23-genoa).
+
+The supplied `SWC_L23/` geometry and `L23_all.csv` contacts completed **1,000 ms of model time** on Genoa with **32 native NEURON threads in one process**. This run used the published ModelDB 241165 `cACint209` profile and original-wrapper discretization used in the three-neuron comparison. It did not use the different pyramidal-cell profile from the earlier L23 benchmark.
 
 ## Inputs and protocol
 
@@ -41,21 +43,21 @@ There were 334 somatic spikes in the first 100 ms and another 150 afterward; the
 
 A fresh **one-thread, 25 ms** run used the same cells, contacts and stimulus. Its **78,563 soma-voltage samples and every soma spike time matched the first 25 ms of the 32-thread run exactly**, with maximum voltage difference **0 mV**. All saved values and final compartment voltages were finite. The full second was not rerun serially.
 
-The runner now records voltage vectors every fixed step with point-process anchors on each owning thread, then downsamples by four. The current `pc.psolve` solver advances the native threads. Cell construction occurs before enabling the requested thread count. The earlier profile remains the runner's default; `--original-family` selects this experiment.
+The runner recorded voltage vectors every fixed step with point-process anchors on each owning thread, then downsampled by four. `pc.psolve` advanced the native threads. Cell construction occurred before enabling the requested thread count. The current `run_l23.py` entry uses this profile by default; only the legacy `tools/run_l23.py` requires `--original-family` to select it.
 
 ## Inspect and reproduce
 
-- [Network voltage and spike overview](../outputs/NeuronSim-l23-current.9iguVDCM/outputs/parallel32_1s/network_response.png)
-- [Recorded arrays](../outputs/NeuronSim-l23-current.9iguVDCM/outputs/parallel32_1s/recordings.npz)
-- [Run summary and excluded IDs](../outputs/NeuronSim-l23-current.9iguVDCM/outputs/parallel32_1s/summary.json)
-- [Serial/parallel validation](../outputs/NeuronSim-l23-current.9iguVDCM/outputs/validation.json)
-- [Activity analysis](../outputs/NeuronSim-l23-current.9iguVDCM/outputs/parallel32_1s/activity_analysis.json)
-- [Runner](../tools/run_l23.py)
+- [Network voltage and spike overview](ARTIFACT_LOCATIONS.md#l23-genoa)
+- [Recorded arrays](ARTIFACT_LOCATIONS.md#l23-genoa)
+- [Run summary and excluded IDs](ARTIFACT_LOCATIONS.md#l23-genoa)
+- [Serial/parallel validation](ARTIFACT_LOCATIONS.md#l23-genoa)
+- [Activity analysis](ARTIFACT_LOCATIONS.md#l23-genoa)
+- [Current dataset entry](../run_l23.py) / [shared archive engine](../neuronsim/archive.py)
 
 On Genoa, the isolated workspace is `/home/shisoft/NeuronSim-l23-current.9iguVDCM`. Its retained data, vendor library and environment link to the previously prepared local resources. The saved code and input manifests preserve provenance.
 
 ```sh
-.venv/bin/python tools/run_l23.py --data data --original-family \
-  --max-cells 0 --duration 1000 --amplitude 1 --threads 32 \
+.venv/bin/python run_l23.py --data /path/to/neuron_10-26-2026 \
+  --duration-ms 1000 --amplitude 1 --threads 32 \
   --output outputs/parallel32_1s
 ```

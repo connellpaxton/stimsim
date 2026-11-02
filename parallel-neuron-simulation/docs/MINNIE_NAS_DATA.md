@@ -6,7 +6,7 @@ The public **Minnie65 v1300** shapes, connectivity and cell metadata are stored 
 /mnt/nas-storage/NeuronSim/datasets/minnie65/v1300
 ```
 
-The directory is shared with Genoa. Check `DOWNLOAD_STATUS.json` for the current transfer/completion state; a `.part` file is still being assembled or verified.
+This is the original machine-specific NAS location shared with Genoa. Its download status is complete. For a new/resumed download, `DOWNLOAD_STATUS.json` reports progress and a `.part` filename denotes an unfinished transfer; it does not describe the completed archive's present state.
 
 The initial download **completed on October 28, 2026**: all **71,240 selected source files** (31,475,900,787 bytes) matched their pinned source MD5 checksums and sizes. The final SWC filename/size inventory matched exactly, both wiring tables passed 1,000-row schema samples, and Genoa successfully opened the completed files and 144,120-row cell index. Completion evidence is in `TRANSFER_COMPLETION.json` on NAS.
 
@@ -52,11 +52,12 @@ The official static-export documentation says axons were deliberately removed fr
 The downloader uses the public [documented static repositories](https://tutorial.microns-explorer.org/static-repositories.html#neuron-skeletons-v1300). Each source object is pinned to a GCS generation. Size and source MD5 are checked before a final filename is published; local SHA-256 hashes are retained. Large tables use parallel resumable ranges and whole-object verification. This verifies source identity, not biological completeness or positive radii.
 
 ```sh
-.venv/bin/python tools/download_minnie_simulation_data.py
-.venv/bin/python tools/index_minnie_metadata.py
+raw=/path/to/minnie65/v1300
+.venv/bin/python tools/download_minnie_simulation_data.py --output "$raw"
+.venv/bin/python tools/index_minnie_metadata.py --data "$raw"
 ```
 
-The original datasets and scripts in the repository are not replaced. The download is outside Dropbox and Git. See the NAS directory's `README.md`, inventory, status and validation records for the exact files and transfer state.
+The original datasets and scripts are not replaced. The original NAS download is outside Dropbox and Git. See its `README.md`, inventory, status and validation records for exact files and checksums. A fresh stimsim checkout does not include this machine-specific storage.
 
 See the [first v1300 simulation trial](NAS_V1300_TRIAL.md) for the proofread-cohort selection, its observed internal wiring and the commands that prepare these exports for the existing model.
 

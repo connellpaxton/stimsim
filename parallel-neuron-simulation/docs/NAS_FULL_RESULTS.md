@@ -1,5 +1,7 @@
 # Full Minnie v1300 partial-morphology simulation results
 
+Historical NeuronSim experiment, completed before the stimsim import. This report preserves its measurements; [current-checkout validation](VALIDATION.md) identifies what has actually been rerun after refactoring. Artifact links refer to [external files](ARTIFACT_LOCATIONS.md#full-minnie-v1300), not bundled checkout outputs.
+
 The **70,995-neuron, 13,309,933-contact** network completed one second of model time on Genoa using **96 MPI ranks with one native thread each**. Controls, replay validation and NAS archive checks completed successfully on October 29, 2026 UTC.
 
 This is the acknowledged partial-morphology experiment. Only 1,689 trees contain a recorded axon; missing axons were not generated. The run retains the published ModelDB 241165 `cACint209` profile on every cell and the previous column's compartment-sizing rule. See [preparation and exclusions](NAS_FULL_DATASET.md) and [MPI construction](MPI_CONSTRUCTION.md).
@@ -43,20 +45,20 @@ During the first 100 ms, the coupled replay produced **102,652 spikes**, includi
 
 All saved voltages and every final compartment voltage were finite. Every contact and cell was accounted for during the MPI merge, and actual thread ownership was verified. The 100 ms replay matched all **71,065,995 soma-voltage samples exactly**, maximum difference **0 mV**, including the sample at 100 ms. All **102,652 spike times and cell IDs in `[0, 100)` ms** also matched exactly.
 
-The initial closed-interval spike comparison exposed an endpoint issue: the longer run records 16 events at `100.00000000011417` ms as it continues; the replay stops at 100 ms. Those cutoff events are now reported separately. Raw recordings were not modified. Three regression tests verify that cutoff events are reported, missing interior events fail validation, and altered voltage at the cutoff fails validation. The full suite passes **37 tests**. The original analysis, failed comparison log and original source hashes are preserved.
+The initial closed-interval spike comparison exposed an endpoint issue: the longer run records 16 events at `100.00000000011417` ms as it continues; the replay stops at 100 ms. The corrected analysis reports those cutoff events separately. Raw recordings were not modified. Three regression tests verify that cutoff events are reported, missing interior events fail validation, and altered voltage at the cutoff fails validation. At that analysis stage, **37 tests passed**. The original analysis, failed comparison log and original source hashes are preserved.
 
 Post-run checks verified all **70,995 raw and prepared SWC hashes**, prepared tables and model provenance. Every original source file except the corrected analysis script remained unchanged; both analysis versions and hashes are retained. The electrical parameters match the previous column reference, with MPI execution explicitly identified as the architecture change. The full experiment was not repeated serially and timestep convergence was not tested here.
 
 ## Artifacts
 
-- [First 500 ms activity video](../outputs/mpi_full_trial/video/first_500ms_population.mp4) / [HTML player](../outputs/mpi_full_trial/video/first_500ms_population.html): 1080p, 30 fps, 30 seconds of playback (60× slowdown). All 70,995 recorded soma voltages appear at measured positions in two projections; white rings mark spikes in the preceding 2 ms. This shows population recruitment, not voltage traveling along branches or missing axons. No simulation rerun was needed.
-- [Population rates and recruitment](../outputs/mpi_full_trial/results/population_rates.png)
-- [Voltage and control overview](../outputs/mpi_full_trial/results/network_response.png)
-- [Main summary](../outputs/mpi_full_trial/results/long_protocol/summary.json)
-- [Validation and endpoint accounting](../outputs/mpi_full_trial/results/validation.json)
-- [Memory methodology and observations](../outputs/mpi_full_trial/results/aggregate_memory.json)
-- [Original command and source-update provenance](../outputs/mpi_full_trial/run_manifest.json)
-- [Completion record](../outputs/mpi_full_trial/EXPERIMENT_COMPLETE.json)
+- [First 500 ms activity video](ARTIFACT_LOCATIONS.md#full-minnie-v1300) / [HTML player](ARTIFACT_LOCATIONS.md#full-minnie-v1300): 1080p, 30 fps, 30 seconds of playback (60× slowdown). All 70,995 recorded soma voltages appear at measured positions in two projections; white rings mark spikes in the preceding 2 ms. This shows population recruitment, not voltage traveling along branches or missing axons. No simulation rerun was needed.
+- [Population rates and recruitment](ARTIFACT_LOCATIONS.md#full-minnie-v1300)
+- [Voltage and control overview](ARTIFACT_LOCATIONS.md#full-minnie-v1300)
+- [Main summary](ARTIFACT_LOCATIONS.md#full-minnie-v1300)
+- [Validation and endpoint accounting](ARTIFACT_LOCATIONS.md#full-minnie-v1300)
+- [Memory methodology and observations](ARTIFACT_LOCATIONS.md#full-minnie-v1300)
+- [Original command and source-update provenance](ARTIFACT_LOCATIONS.md#full-minnie-v1300)
+- [Completion record](ARTIFACT_LOCATIONS.md#full-minnie-v1300)
 
 The full archive, including merged recordings and rank outputs, is:
 
@@ -64,12 +66,12 @@ The full archive, including merged recordings and rank outputs, is:
 /mnt/nas-storage/NeuronSim/experiments/minnie65_v1300_full_mpi96_FzV1DzbT
 ```
 
-`results/long_protocol/recordings.npz` contains the full soma/spike arrays; `results/modeled_sites.csv.gz` contains all modeled placements. The archive's `prepared` link references the checksum-verified prepared inputs in the preceding full-cohort workspace. Local `outputs/mpi_full_trial/` contains summaries, figures and provenance; it does not duplicate the large NPZ files. The Genoa workspace remains `/home/shisoft/NeuronSim-mpi.FzV1DzbT`.
+`results/long_protocol/recordings.npz` contains the full soma/spike arrays; `results/modeled_sites.csv.gz` contains all modeled placements. The archive's `prepared` link references the checksum-verified prepared inputs in the preceding full-cohort workspace. The original NeuronSim workstation's `outputs/mpi_full_trial/` mirror contains summaries, figures and provenance, without duplicating the large NPZ files; it is not bundled in stimsim. The original Genoa workspace was `/home/shisoft/NeuronSim-mpi.FzV1DzbT`.
 
 The derived video, preview frames and provenance JSON are archived under `video/`. Reproduce with `tools/render_population_video.py` (NumPy, Matplotlib and FFmpeg, or `imageio-ffmpeg`):
 
 ```bash
-python tools/render_population_video.py \
+.venv/bin/python tools/render_population_video.py \
   --run /path/to/archive/results/long_protocol \
   --nodes /path/to/archive/prepared/data/nodes.csv \
   --output /path/to/new-video/activity.mp4 \

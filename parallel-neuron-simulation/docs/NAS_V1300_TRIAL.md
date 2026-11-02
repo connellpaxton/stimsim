@@ -1,5 +1,7 @@
 # First simulation from the NAS Minnie dataset
 
+Historical 1,711-cell trial completed October 29, 2026, before the stimsim import. Current-checkout checks are listed in [validation status](VALIDATION.md); evidence files are indexed under [external artifact locations](ARTIFACT_LOCATIONS.md#proofread-v1300-trial).
+
 This trial uses the same published ModelDB 241165 `cACint209` adaptation as the previous column experiment, with **Minnie65 v1300 geometry and wiring from the completed NAS download**. Its cohort is the proofread-export subset across Minnie65, rather than the earlier curated 1,352-cell column or the entire downloaded catalog.
 
 ## Selected anatomy
@@ -19,7 +21,7 @@ Metadata assigns 1,509 selected cells to V1, 145 to RL and 57 to AL. Only connec
 
 The same preprocessing as the column workflow repaired 1,316 zero-radius points in 224 trees using the nearest positive upstream radius and collapsed 1,385 identical parent/child points in 919 trees. Retained coordinates, positive radii and total cable length were preserved. Original NAS files were not edited. These exported reconstructions are not guaranteed biologically complete.
 
-The broader metadata-eligible catalog contains **71,000 neurons and 13,311,432 internal contacts** across 8,887,257 directed pairs. Those figures come from streaming the connection table; that larger cohort has not passed this morphology preparation or been simulated.
+The broader metadata-eligible catalog contained **71,000 neurons and 13,311,432 internal contacts** across 8,887,257 directed pairs before morphology checks. That larger cohort was outside this trial. A subsequent preparation excluded five cells and produced the **70,995-neuron / 13,309,933-contact** network that [completed the full experiment](NAS_FULL_RESULTS.md).
 
 ## Model and protocol
 
@@ -57,12 +59,12 @@ Every saved voltage, time axis, cell ID and spike in the 100 ms replay matched t
 
 ## Saved artifacts
 
-- [Population response and control plot](../outputs/nas_v1300_trial/experiment/results/network_response.png)
-- [Main run summary](../outputs/nas_v1300_trial/experiment/results/long_protocol/summary.json)
-- [Soma voltage and spike arrays](../outputs/nas_v1300_trial/experiment/results/long_protocol/recordings.npz)
-- [Control and replay validation](../outputs/nas_v1300_trial/experiment/results/validation.json)
-- [Comparison with the previous column parameters](../outputs/nas_v1300_trial/experiment/results/model_parameter_comparison.json)
-- [Process resource measurement](../outputs/nas_v1300_trial/experiment/results/process_resources.txt)
+- [Population response and control plot](ARTIFACT_LOCATIONS.md#proofread-v1300-trial)
+- [Main run summary](ARTIFACT_LOCATIONS.md#proofread-v1300-trial)
+- [Soma voltage and spike arrays](ARTIFACT_LOCATIONS.md#proofread-v1300-trial)
+- [Control and replay validation](ARTIFACT_LOCATIONS.md#proofread-v1300-trial)
+- [Comparison with the previous column parameters](ARTIFACT_LOCATIONS.md#proofread-v1300-trial)
+- [Process resource measurement](ARTIFACT_LOCATIONS.md#proofread-v1300-trial)
 
 The full prepared shapes, tables, source snapshot, published model, logs and results are on NAS at:
 
@@ -70,7 +72,7 @@ The full prepared shapes, tables, source snapshot, published model, logs and res
 /mnt/nas-storage/NeuronSim/experiments/minnie65_v1300_proofread_1711_uwUH4zIS
 ```
 
-Local recordings and preparation manifests are under `outputs/nas_v1300_trial/experiment/`; the local copy does not duplicate the prepared SWCs. The original download remains at `/mnt/nas-storage/NeuronSim/datasets/minnie65/v1300`.
+The original workstation's selected recordings and manifests are under `outputs/nas_v1300_trial/experiment/`; this is not an output directory bundled in stimsim. The original download remains at `/mnt/nas-storage/NeuronSim/datasets/minnie65/v1300`.
 
 ## Reproduce and inspect
 
@@ -79,14 +81,15 @@ On Genoa, the isolated workspace is `/home/shisoft/NeuronSim-nas-v1300.uwUH4zIS`
 ```sh
 .venv/bin/python tools/prepare_nas_network.py \
   --source /mnt/nas-storage/NeuronSim/datasets/minnie65/v1300 \
-  --output prepared
+  --cohort proofread --output prepared
 mkdir -p results
 /usr/bin/time -v -o results/process_resources.txt \
   .venv/bin/python -u -m neuronsim \
   --data prepared/data --morphologies prepared/morphologies \
   --output results --threads 96 --inhibition \
   --duration-ms 1000 --validation-window-ms 100
-.venv/bin/python tools/analyze_nas_trial.py --workspace .
 ```
 
-Preparation requires pandas in addition to the simulation dependencies. Use a new output directory when preparing again; existing completed inputs are not overwritten. The prepared `data/` contains `nodes.csv`, `edges.csv` and `summary.json`; `morphologies/manifest.json` records per-cell provenance and repairs.
+Run from `parallel-neuron-simulation/`. This reproduces the trial's native protocol through the generic runner; the named column/full-Minnie entries intentionally reject this different 1,711-cell cohort. Preparation requires pandas. Use a new output directory; the prepared `data/` contains `nodes.csv`, `edges.csv` and `summary.json`, while `morphologies/manifest.json` records per-cell provenance and repairs.
+
+`tools/analyze_nas_trial.py` is an archive-specific analyzer. It also requires the archived source snapshot and `source_hashes.json`, original/prepared inputs, cell assignments and `results/process_resources.txt`. A fresh CLI run alone does not create that full context; the historical analysis command must not be treated as a general one-command analysis of any run.

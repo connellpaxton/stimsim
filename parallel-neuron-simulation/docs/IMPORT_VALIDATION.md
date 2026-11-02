@@ -1,18 +1,16 @@
-# Import validation
+# Initial import validation (historical)
 
-Checks performed November 2, 2026 in the local `feat/neuron-simulation` branch, after moving the implementation under `parallel-neuron-simulation/`.
-
-Paths below use the current folder name; at the initial import it was named `simulation/`. This records the initial import at commit `fd3080d`, before the branch was renamed to `parallel-neuron-simulation`. Subsequent [dataset entry-point validation](DATASET_ENTRY_POINTS.md) covers the shared-runner refactor and additional tests.
+This records checks performed November 2, 2026 at initial import commit `fd3080d`. The branch was then named `feat/neuron-simulation` and the folder `simulation/`. Both are now named `parallel-neuron-simulation`. [Validation status](VALIDATION.md) records the later dataset refactor and folder-rename checks; the measurements below remain the original import results.
 
 ## Environment and compilation
 
-A fresh virtual environment was installed for this checkout: Python 3.11, NEURON 9.0.1, NumPy 2.4.6, Matplotlib 3.11.2 and pandas 3.1.0. `pip check` reports no broken requirements. Both the published `vendor/aberra2018/mechanisms/` and earlier recovered `mechanisms/` sources compiled successfully using `nrnivmodl`; compiled output is ignored by Git.
+A fresh virtual environment was installed for this checkout: Python 3.11, NEURON 9.0.1, NumPy 2.4.6, Matplotlib 3.11.2 and pandas 3.1.0. `pip check` reported no broken requirements. Both the published `vendor/aberra2018/mechanisms/` and earlier recovered `mechanisms/` sources compiled successfully using `nrnivmodl`; compiled output is ignored by Git.
 
-The simulation, sharding, merge, analysis and population-renderer CLI help commands loaded successfully. The source manifests verified all 29 published baseline entries, three additional L23 entries and 111 older M1 entries. All copied implementation files retain their import-manifest hashes; the copied documentation index was adapted explicitly.
+At the import, the simulation, sharding, merge, analysis and population-renderer CLI help commands loaded successfully. Source manifests verified all 29 published baseline entries, three additional L23 entries and 111 older M1 entries. Copied implementation files matched their import-manifest hashes at that stage; the documentation index was adapted explicitly. Later refactors are tracked in Git. `IMPORT_MANIFEST.json` is an initial-source snapshot, not a checksum lock for today's implementation.
 
 ## Tests
 
-From `parallel-neuron-simulation/`:
+The test command, using today's folder name, is run from `parallel-neuron-simulation/`:
 
 ```sh
 NEURON_MODULE_OPTIONS=-nogui OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 \
@@ -32,9 +30,9 @@ A temporary **synthetic two-cell, five-contact fixture** exercised the real CLI,
 | Zero-transmission control | Eight spikes in the injected cell; none in the unstimulated cell |
 | Coupled replay | Inclusive saved voltages and interior spike events matched the main prefix exactly |
 | Numerical output | Recorded and final compartment voltages finite |
-| Relocation check | The same CLI simulation passed from the final `parallel-neuron-simulation/` directory and matched the one-thread reference exactly |
+| Initial relocation check | The CLI simulation passed after moving into the code subdirectory, then named `simulation/`, and matched the one-thread reference exactly |
 
-Generated smoke fixtures/results live under ignored `parallel-neuron-simulation/outputs/import_smoke/`; environment/build/test logs are local and excluded from the commit. Original tracked files under `neuron-python-share/` were verified unchanged. Staged-path checks excluded generated data, environments, caches and compiled binaries. Whitespace checks passed for the shared package and newly authored documentation/configuration; checksum-pinned upstream and historical files retain their original formatting.
+After the subsequent folder rename, those local smoke fixtures/results are under ignored `parallel-neuron-simulation/outputs/import_smoke/`; environment/build/test logs are local and excluded from Git. Original tracked files under `neuron-python-share/` were verified unchanged. Staged-path checks excluded generated data, environments, caches and compiled binaries. Whitespace checks passed for the shared package and newly authored documentation/configuration; checksum-pinned upstream and historical files retained their original formatting.
 
 ## Limits
 

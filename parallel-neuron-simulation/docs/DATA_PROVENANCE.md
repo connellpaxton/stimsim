@@ -2,6 +2,8 @@
 
 Recorded October 30, 2026. This note describes the completed **70,995-neuron Minnie65 v1300 experiment and its population video**. Anatomy and connectivity come from MICrONS; electrical behavior comes from a separate published model and explicitly assigned parameters. Successful execution does not establish biological accuracy.
 
+This is provenance for the historical NeuronSim experiment. See [validation status](VALIDATION.md) for checks of the refactored stimsim code and [artifact locations](ARTIFACT_LOCATIONS.md) for external evidence files; a fresh checkout does not contain the original recordings.
+
 ## Public sources and local originals
 
 The source repositories are listed in the [official MICrONS static-export documentation](https://tutorial.microns-explorer.org/static-repositories.html#neuron-skeletons-v1300). The original downloads completed October 28, 2026: **71,240 files, 31,475,900,787 bytes**, including **71,234 unique SWCs**, three compressed tables and their schemas. Raw imagery, segmentation volumes, surface meshes and functional imaging movies were excluded.
@@ -83,7 +85,7 @@ These checks were implemented by the simulation authoring agent and are availabl
 
 ## Audit trail and reproduction
 
-Start with the [exact command and runtime manifest](../outputs/mpi_full_trial/run_manifest.json), [validation results](../outputs/mpi_full_trial/results/validation.json), [full results](NAS_FULL_RESULTS.md), and [code walkthrough](CODE_WALKTHROUGH.md). The complete experiment, raw recordings, source snapshots, input links and checksum inventory are archived at:
+Start with the [exact command and runtime manifest](ARTIFACT_LOCATIONS.md#full-minnie-v1300), [validation results](ARTIFACT_LOCATIONS.md#full-minnie-v1300), [full results](NAS_FULL_RESULTS.md), and [code walkthrough](CODE_WALKTHROUGH.md). The complete experiment, raw recordings, source snapshots, input links and checksum inventory are archived at:
 
 ```text
 /mnt/nas-storage/NeuronSim/experiments/minnie65_v1300_full_mpi96_FzV1DzbT/

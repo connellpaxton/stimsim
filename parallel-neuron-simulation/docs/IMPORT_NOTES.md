@@ -9,7 +9,7 @@ This branch adds the simulation implementation developed in the separate NeuronS
 - Tests, documentation, recording selections and pinned upstream model sources with their original license and checksum files.
 - Earlier M1 and mechanism-recovery work, labeled separately in the documentation index.
 
-The current model is the published ModelDB 241165 adaptation. This import does not add a fruit-fly model, connectome download or embodied simulator. It does not recover the missing custom mechanisms of the original supplied script.
+The current model is the published ModelDB 241165 adaptation. The import includes Minnie download/preparation tools; it does not include a fruit-fly model/downloader or embodied simulator. It does not recover the missing custom mechanisms of the original supplied script.
 
 ## Source identity
 
@@ -19,7 +19,7 @@ For upstream public data and model URLs, see [data provenance](DATA_PROVENANCE.m
 
 ## External inputs and historical reports
 
-The import excludes environments, credentials, compiled mechanism builds, raw cell datasets and generated recordings/videos. Historical reports retain the original experiment paths. Their `outputs/...` links are references to external artifacts, not files bundled in a fresh clone. NAS and Genoa paths are specific to the original environment and must be replaced when reproducing elsewhere.
+The import excludes environments, credentials, compiled mechanism builds, raw cell datasets and generated recordings/videos. Historical reports retain the original experiment paths. Their evidence links go through [external artifact locations](ARTIFACT_LOCATIONS.md); those files are not bundled in a fresh clone. NAS and Genoa paths are specific to the original environment and must be replaced when reproducing elsewhere.
 
 Use explicit data/output arguments when running the older tools: some retain the original author's archive location as their default. The main `python -m neuronsim` interface requires explicit prepared data, morphology and output paths. The NAS downloader also has an original-machine default; set `--output` for another location.
 
@@ -27,6 +27,4 @@ The original working-copy manifests under `model/` and historical run source has
 
 ## Validation
 
-See [`IMPORT_VALIDATION.md`](IMPORT_VALIDATION.md) for checks run in this checkout. Prior 70,995-neuron timing/replay results are historical measurements, not a claim that this import reran that large experiment. Native mechanisms must be compiled locally; the original Windows DLL is not used by the imported runner.
-
-The branch and any commit remain local until the user explicitly authorizes a push.
+See [validation status](VALIDATION.md) for checks of the refactored checkout and [`IMPORT_VALIDATION.md`](IMPORT_VALIDATION.md) for the earlier import snapshot. Prior 70,995-neuron timing/replay results are historical measurements, not a claim that this import reran that large experiment. Native mechanisms must be compiled locally; the original Windows DLL is not used by the imported runner.
