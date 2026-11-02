@@ -1,6 +1,6 @@
 # NEURON simulation implementation
 
-NEURON simulation tools for reconstructed mouse cortical networks, contained in the `simulation/` folder of stimsim. The original shared scripts remain in `../neuron-python-share/`.
+NEURON simulation tools for reconstructed mouse cortical networks, contained in the `parallel-neuron-simulation/` folder of stimsim. The original shared scripts remain in `../neuron-python-share/`.
 
 The `neuronsim` package imports per-cell SWCs, applies a checksum-pinned published ModelDB 241165 electrical profile, constructs native synaptic connections, and runs either native threads or distributed MPI processes. It includes transmission controls, replay checks, input provenance, recording and video tools.
 
@@ -12,7 +12,7 @@ To inspect the computation itself, follow the [critical simulation code path](do
 
 ## Choose a dataset
 
-Use these separate entry files from `simulation/`. Each prints its dataset identity/source URLs and saves `dataset.json` plus dataset metadata in its result summaries. `--describe` prints the source/version/assumption record without loading data or running NEURON.
+Use these separate entry files from `parallel-neuron-simulation/`. Each prints its dataset identity/source URLs and saves `dataset.json` plus dataset metadata in its result summaries. `--describe` prints the source/version/assumption record without loading data or running NEURON.
 
 | Entry file | Dataset and default selection |
 | --- | --- |
@@ -40,10 +40,10 @@ Datasets, credentials, environments, compiled mechanisms and generated outputs a
 
 ## Install and compile
 
-Use Linux with Python 3.11 or 3.12, a C++ compiler and `make`. The source simulation was validated with NEURON 9.0.1. From the `simulation/` directory:
+Use Linux with Python 3.11 or 3.12, a C++ compiler and `make`. The source simulation was validated with NEURON 9.0.1. From the `parallel-neuron-simulation/` directory:
 
 ```sh
-cd simulation
+cd parallel-neuron-simulation
 python3 -m venv .venv
 .venv/bin/python -m pip install -r requirements-minnie.txt neuron==9.0.1
 (cd vendor/aberra2018/mechanisms && ../../../.venv/bin/nrnivmodl)
@@ -68,7 +68,7 @@ Provide `prepared/data/{nodes.csv,edges.csv,summary.json}` and `prepared/morphol
 
 ## MPI execution
 
-Install an MPI implementation such as Open MPI and the optional Python dependency. Run all commands from `simulation/`; the MPI executable and `mpi4py` must use compatible MPI libraries.
+Install an MPI implementation such as Open MPI and the optional Python dependency. Run all commands from `parallel-neuron-simulation/`; the MPI executable and `mpi4py` must use compatible MPI libraries.
 
 ```sh
 .venv/bin/python -m pip install -r requirements-mpi.txt

@@ -1368,15 +1368,16 @@
     }
   ],
   "target_adaptations": [
-    "simulation/README.md",
-    "simulation/.gitignore",
-    "simulation/docs/README.md",
-    "simulation/docs/IMPORT_NOTES.md",
-    "simulation/docs/IMPORT_VALIDATION.md",
+    "parallel-neuron-simulation/README.md",
+    "parallel-neuron-simulation/.gitignore",
+    "parallel-neuron-simulation/docs/README.md",
+    "parallel-neuron-simulation/docs/IMPORT_NOTES.md",
+    "parallel-neuron-simulation/docs/IMPORT_VALIDATION.md",
     "README.md",
     ".gitignore",
-    "simulation/.gitattributes"
+    "parallel-neuron-simulation/.gitattributes"
   ],
-  "target_directory": "simulation",
-  "path_base": "All copied-file paths are relative to simulation/"
+  "target_directory": "parallel-neuron-simulation",
+  "path_base": "All copied-file paths are relative to parallel-neuron-simulation/",
+  "directory_renamed_from": "simulation"
 }

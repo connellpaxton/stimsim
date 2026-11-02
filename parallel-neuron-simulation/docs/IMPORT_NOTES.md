@@ -13,7 +13,7 @@ The current model is the published ModelDB 241165 adaptation. This import does n
 
 ## Source identity
 
-[`IMPORT_MANIFEST.json`](IMPORT_MANIFEST.json) records the source workspace's base commit, its dirty/untracked state, the target base commit and SHA-256 hashes of all 266 copied files. It captures working files beyond the old source commit; referring only to that commit would omit the shared package and MPI implementation. Copied paths are relative to `simulation/`. Its README and ignore rules, the documentation index, and the small root README link were adapted separately. All added implementation code lives under `simulation/`.
+[`IMPORT_MANIFEST.json`](IMPORT_MANIFEST.json) records the source workspace's base commit, its dirty/untracked state, the target base commit and SHA-256 hashes of all 266 copied files. It captures working files beyond the old source commit; referring only to that commit would omit the shared package and MPI implementation. Copied paths are relative to `parallel-neuron-simulation/`. Its README and ignore rules, the documentation index, and the small root README link were adapted separately. All added implementation code lives under `parallel-neuron-simulation/`.
 
 For upstream public data and model URLs, see [data provenance](DATA_PROVENANCE.md) and the manifests in `vendor/`. A matching hash establishes byte identity; it does not establish scientific validity.
 

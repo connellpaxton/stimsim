@@ -1,6 +1,6 @@
 # Dataset-specific simulation entry points
 
-Run commands from `simulation/` after installing dependencies and compiling the published mechanisms as described in [the README](../README.md). No entry point downloads data automatically or silently selects a different release. Use a new output directory for each experiment.
+Run commands from `parallel-neuron-simulation/` after installing dependencies and compiling the published mechanisms as described in [the README](../README.md). No entry point downloads data automatically or silently selects a different release. Use a new output directory for each experiment.
 
 ## Select the experiment
 
