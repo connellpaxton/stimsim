@@ -1,0 +1,29 @@
+{
+  "commit": "93e01d4a927ab0cc5ca137329b86925777e63f02",
+  "files": [
+    {
+      "path": "vendor/aberra2018/cells/L23_PC_cADpyr229_1/biophysics.hoc",
+      "encoding": "utf-8",
+      "sha": "efd7c894cde241d7fe50bd7b26aeeb834c101c09",
+      "display_url": "https://github.com/ModelDBRepository/241165/blob/93e01d4a927ab0cc5ca137329b86925777e63f02/cells/L23_PC_cADpyr229_1/biophysics.hoc",
+      "display_title": "biophysics.hoc",
+      "sha256": "3fe6be4cb8c1dae0b17721e5a9649fa0cded4918f3481fbfda4fcba3b7daad5f"
+    },
+    {
+      "path": "vendor/aberra2018/cells/L23_PC_cADpyr229_1/constants.hoc",
+      "encoding": "utf-8",
+      "sha": "344d29edcba68df0e22e399640d2ecf96aaa5d4f",
+      "display_url": "https://github.com/ModelDBRepository/241165/blob/93e01d4a927ab0cc5ca137329b86925777e63f02/cells/L23_PC_cADpyr229_1/constants.hoc",
+      "display_title": "constants.hoc",
+      "sha256": "94d620d2af814a057890b6dccf9959a3a983b732053c468d6b1c66ddee4480b2"
+    },
+    {
+      "path": "vendor/aberra2018/cells/L23_PC_cADpyr229_1/LICENSE",
+      "encoding": "utf-8",
+      "sha": "d7186996cdaead7703e2266b3ffa93e8dac922c9",
+      "display_url": "https://github.com/ModelDBRepository/241165/blob/93e01d4a927ab0cc5ca137329b86925777e63f02/cells/L23_PC_cADpyr229_1/LICENSE",
+      "display_title": "LICENSE",
+      "sha256": "b5a9dac2f783d4aa744828e318297c6fde30be005c005fa2cdd7f5088e88d219"
+    }
+  ]
+}

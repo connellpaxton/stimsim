@@ -1,0 +1,3 @@
+-r requirements-neuron.txt
+# Required only when extracting the public connectivity tables.
+pandas>=2.2,<4

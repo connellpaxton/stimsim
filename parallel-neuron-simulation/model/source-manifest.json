@@ -1,0 +1,14 @@
+{
+  "cell.py": {
+    "source_sha256": "d3b8dccf7d32cec0d321b5e052d342c9e68e34c9379972db5dd59b1accae1bd7",
+    "working_copy_sha256": "31b6e33a0cc828766c71f7712cd12bcba555b3799f3aa749eb70cead3f35a9d3"
+  },
+  "plotting3D.py": {
+    "source_sha256": "c3b2a3a61507954b5cc01abe1d50ab96c50d041a29f218a2d21fb0a91311d883",
+    "working_copy_sha256": "4644830e26bb1ad075702918a532f25bdbeb5872589012540985ab9cf3363822"
+  },
+  "wrapper-synaptic-connections.py": {
+    "source_sha256": "d3f182b103f19c9ab1e5ceadc38433519d258f1c06951abced172e91f58d5b52",
+    "working_copy_sha256": "c201db97ccf46142bc55b8e955241b23b1a3a363490dd8120d2d49683b98e1b4"
+  }
+}

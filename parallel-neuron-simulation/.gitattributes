@@ -1,0 +1,2 @@
+# Published parameter pickles are model assets, not reviewable source text.
+vendor/**/*.pkl binary

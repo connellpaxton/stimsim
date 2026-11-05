@@ -1,0 +1,181 @@
+{
+  "repository": "ModelDBRepository/241165",
+  "commit": "93e01d4a927ab0cc5ca137329b86925777e63f02",
+  "scope": "Representative L4_LBC_cACint209_1 example and full shared mechanism set, plus reference files; not the entire archive",
+  "files": [
+    {
+      "path": "mechanisms/Ca.mod",
+      "git_blob_sha": "7a55bc2824f2662893c52edaf96a2e00d4b9e67b",
+      "sha256": "772b3a6f0bbd29e68818581b45a181955ee894f83e84b71329daef6e1d651c91",
+      "url": "https://github.com/ModelDBRepository/241165/blob/93e01d4a927ab0cc5ca137329b86925777e63f02/mechanisms/Ca.mod"
+    },
+    {
+      "path": "mechanisms/CaDynamics_E2.mod",
+      "git_blob_sha": "dd4337ff4120622033082b725a7c758727a2c413",
+      "sha256": "fee7fa2ad830cc009dcce02a6247096fb1431e29705819cdec6b2ccd6cabe0d6",
+      "url": "https://github.com/ModelDBRepository/241165/blob/93e01d4a927ab0cc5ca137329b86925777e63f02/mechanisms/CaDynamics_E2.mod"
+    },
+    {
+      "path": "mechanisms/Ca_HVA.mod",
+      "git_blob_sha": "949f7cdaba32a48cc98fd4780f262d6313c19808",
+      "sha256": "af82ffdd620108429ce51e11907a5c716bf2319a86aea3e3ad130b184431892e",
+      "url": "https://github.com/ModelDBRepository/241165/blob/93e01d4a927ab0cc5ca137329b86925777e63f02/mechanisms/Ca_HVA.mod"
+    },
+    {
+      "path": "mechanisms/Ca_LVAst.mod",
+      "git_blob_sha": "71fdbe3fe0342171dc83159bbcf78eb1e15e6e92",
+      "sha256": "21ec22269dd143dbb2d75df94c478434ac813fd13eb8b8a93866e41bf036c5ba",
+      "url": "https://github.com/ModelDBRepository/241165/blob/93e01d4a927ab0cc5ca137329b86925777e63f02/mechanisms/Ca_LVAst.mod"
+    },
+    {
+      "path": "mechanisms/Ih.mod",
+      "git_blob_sha": "a16a03e48577c26996bb7146ff10436580e0cc05",
+      "sha256": "92b8477684c78121c4e4940abe034263342503f5ab9258858655997f418a0e39",
+      "url": "https://github.com/ModelDBRepository/241165/blob/93e01d4a927ab0cc5ca137329b86925777e63f02/mechanisms/Ih.mod"
+    },
+    {
+      "path": "mechanisms/Im.mod",
+      "git_blob_sha": "bb52cf566355a3a4f148b2e1916b4b9d7dbb3582",
+      "sha256": "6ac36aa3e113eab67d7d882a6a2b1c9c5e9d52cadae44f763666faa360ccd1c0",
+      "url": "https://github.com/ModelDBRepository/241165/blob/93e01d4a927ab0cc5ca137329b86925777e63f02/mechanisms/Im.mod"
+    },
+    {
+      "path": "mechanisms/K_Pst.mod",
+      "git_blob_sha": "c280aa68217586af9584eeaa6982a17d1b0783d8",
+      "sha256": "9c94a8e47b7b9c2a4e1dfae9b0c78c380061f3ba13bab0b38833fc99612d29f2",
+      "url": "https://github.com/ModelDBRepository/241165/blob/93e01d4a927ab0cc5ca137329b86925777e63f02/mechanisms/K_Pst.mod"
+    },
+    {
+      "path": "mechanisms/K_Tst.mod",
+      "git_blob_sha": "40348d64b622b98b711e18e5da3d93a6cd89cc52",
+      "sha256": "bb9e8efb7352d4bfee7d47f0dd0ac372ebf2d0a1e2f76385f47dfdd9cb57c25e",
+      "url": "https://github.com/ModelDBRepository/241165/blob/93e01d4a927ab0cc5ca137329b86925777e63f02/mechanisms/K_Tst.mod"
+    },
+    {
+      "path": "mechanisms/NaTa_t.mod",
+      "git_blob_sha": "16c48d43cba7d6a5e95db679eec7f8d178328e7e",
+      "sha256": "579cc81ce113557886ebcb54870d25d265f7fdabf78623c1a67de378379b45ff",
+      "url": "https://github.com/ModelDBRepository/241165/blob/93e01d4a927ab0cc5ca137329b86925777e63f02/mechanisms/NaTa_t.mod"
+    },
+    {
+      "path": "mechanisms/NaTs2_t.mod",
+      "git_blob_sha": "84dd790ddb7cae23295ebfb6d2834fa5369f06e1",
+      "sha256": "87ec87a2e5bcba2e8fab848b69b4b94d98e58fd1d32c8089e0704899019e5d63",
+      "url": "https://github.com/ModelDBRepository/241165/blob/93e01d4a927ab0cc5ca137329b86925777e63f02/mechanisms/NaTs2_t.mod"
+    },
+    {
+      "path": "mechanisms/Nap_Et2.mod",
+      "git_blob_sha": "6f1d8893bed82c7b2f58eac62488bc74e5e6d729",
+      "sha256": "a123155d554c345f05587c0cadc6b7c94a53e4e7e558218aa5edbdbdcc53f9be",
+      "url": "https://github.com/ModelDBRepository/241165/blob/93e01d4a927ab0cc5ca137329b86925777e63f02/mechanisms/Nap_Et2.mod"
+    },
+    {
+      "path": "mechanisms/ProbAMPANMDA_EMS.mod",
+      "git_blob_sha": "ac4c9c41da8b6b62d6aebc3d717a2dd1b12d7212",
+      "sha256": "33063f7c848561304394af3c42b03d17b4be88011321b4c9be98ed9b12c9bda6",
+      "url": "https://github.com/ModelDBRepository/241165/blob/93e01d4a927ab0cc5ca137329b86925777e63f02/mechanisms/ProbAMPANMDA_EMS.mod"
+    },
+    {
+      "path": "mechanisms/ProbGABAAB_EMS.mod",
+      "git_blob_sha": "1d1417099b56bc3b30023dae037b1726c5ae7456",
+      "sha256": "5817a94bf142e56401b7ac5499b41018af0d9b4ad362c7b9e5865f5546b43fe6",
+      "url": "https://github.com/ModelDBRepository/241165/blob/93e01d4a927ab0cc5ca137329b86925777e63f02/mechanisms/ProbGABAAB_EMS.mod"
+    },
+    {
+      "path": "mechanisms/SK_E2.mod",
+      "git_blob_sha": "e411d135e7fad6f5fd7bbed1b2a1361323d8f786",
+      "sha256": "c1cbebfdf892a8d86f782b369c5a975c571302236dcbc444c433b4e044e49949",
+      "url": "https://github.com/ModelDBRepository/241165/blob/93e01d4a927ab0cc5ca137329b86925777e63f02/mechanisms/SK_E2.mod"
+    },
+    {
+      "path": "mechanisms/SKv3_1.mod",
+      "git_blob_sha": "7fa1ee2d73dc157c84c5606bed05a5b591da17f1",
+      "sha256": "3eaa6df73d441bfeb7b0c43cee9ec6447ec2c6f5feef9f0e41e7da5d56ce1e64",
+      "url": "https://github.com/ModelDBRepository/241165/blob/93e01d4a927ab0cc5ca137329b86925777e63f02/mechanisms/SKv3_1.mod"
+    },
+    {
+      "path": "mechanisms/xtra.mod",
+      "git_blob_sha": "6fc62b8310d7c821cc602d55c4802f34429f9368",
+      "sha256": "ca27b216a4c35f706fb3db04ed6908a3215f8d53cb59eb644d3e8b5442936327",
+      "url": "https://github.com/ModelDBRepository/241165/blob/93e01d4a927ab0cc5ca137329b86925777e63f02/mechanisms/xtra.mod"
+    },
+    {
+      "path": "cells/L4_LBC_cACint209_1/constants.hoc",
+      "git_blob_sha": "344d29edcba68df0e22e399640d2ecf96aaa5d4f",
+      "sha256": "94d620d2af814a057890b6dccf9959a3a983b732053c468d6b1c66ddee4480b2",
+      "url": "https://github.com/ModelDBRepository/241165/blob/93e01d4a927ab0cc5ca137329b86925777e63f02/cells/L4_LBC_cACint209_1/constants.hoc"
+    },
+    {
+      "path": "cells/L4_LBC_cACint209_1/morphology.hoc",
+      "git_blob_sha": "12f39751a379248cc78ea08c6572ef6f79dba4f7",
+      "sha256": "2048a5eff614db60d7d192a7cccd7c08fbf13be91350666ed41cba3eae7c8174",
+      "url": "https://github.com/ModelDBRepository/241165/blob/93e01d4a927ab0cc5ca137329b86925777e63f02/cells/L4_LBC_cACint209_1/morphology.hoc"
+    },
+    {
+      "path": "cells/L4_LBC_cACint209_1/current_amps.dat",
+      "git_blob_sha": "5724e96f53e2164de869d5519a796e06e32bf006",
+      "sha256": "f4e5d4d41734e1846e55f173b4a873aaad1267073414def1d6dff6da3acfeaf5",
+      "url": "https://github.com/ModelDBRepository/241165/blob/93e01d4a927ab0cc5ca137329b86925777e63f02/cells/L4_LBC_cACint209_1/current_amps.dat"
+    },
+    {
+      "path": "cells/L4_LBC_cACint209_1/LICENSE",
+      "git_blob_sha": "d7186996cdaead7703e2266b3ffa93e8dac922c9",
+      "sha256": "b5a9dac2f783d4aa744828e318297c6fde30be005c005fa2cdd7f5088e88d219",
+      "url": "https://github.com/ModelDBRepository/241165/blob/93e01d4a927ab0cc5ca137329b86925777e63f02/cells/L4_LBC_cACint209_1/LICENSE"
+    },
+    {
+      "path": "cells/L4_LBC_cACint209_1/README",
+      "git_blob_sha": "4137744ccce7cda6e8ae3ea820c7a313c6efdba8",
+      "sha256": "778b46f4505d9bfa5978500feccd2b54e9fe17ffc1c778933287bf2a7f16342a",
+      "url": "https://github.com/ModelDBRepository/241165/blob/93e01d4a927ab0cc5ca137329b86925777e63f02/cells/L4_LBC_cACint209_1/README"
+    },
+    {
+      "path": "cells/L4_LBC_cACint209_1/synapses/synapses.hoc",
+      "git_blob_sha": "9a90edcba0d7f564d631c3e8b73276f2d6c2fa79",
+      "sha256": "8a714fba79935345825e9220287de68b411d7029855396e76d4422ebc8b3c65d",
+      "url": "https://github.com/ModelDBRepository/241165/blob/93e01d4a927ab0cc5ca137329b86925777e63f02/cells/L4_LBC_cACint209_1/synapses/synapses.hoc"
+    },
+    {
+      "path": "cells/L4_LBC_cACint209_1/morphology/C310897A-I2_-_Scale_x1.000_y1.025_z1.000_-_Clone_1.asc",
+      "git_blob_sha": "f393b76c4bee3d8a485b18b54c2be245604b9402",
+      "sha256": "95cbaff8938a1536b708845ae19e0919f6d55c885f8b8102cce24e26a994d8ed",
+      "url": "https://github.com/ModelDBRepository/241165/blob/93e01d4a927ab0cc5ca137329b86925777e63f02/cells/L4_LBC_cACint209_1/morphology/C310897A-I2_-_Scale_x1.000_y1.025_z1.000_-_Clone_1.asc"
+    },
+    {
+      "path": "README.html",
+      "git_blob_sha": "04f49b0428e1d397038b92e672667074ad25d75e",
+      "sha256": "ff2de8a01350f9897ba8c9dcd2c678b44f7487552a79c915b03c2cbd469b0394",
+      "url": "https://github.com/ModelDBRepository/241165/blob/93e01d4a927ab0cc5ca137329b86925777e63f02/README.html"
+    },
+    {
+      "path": "myelinBiophysics.hoc",
+      "git_blob_sha": "362bdd2daf7c47628c59ac938c6aa8486ffcbde1",
+      "sha256": "cdf25ab6811d91777301150df143eb83dde18709cdf9e9ff3a7342c4aa8632dc",
+      "url": "https://github.com/ModelDBRepository/241165/blob/93e01d4a927ab0cc5ca137329b86925777e63f02/myelinBiophysics.hoc"
+    },
+    {
+      "path": "setParams.hoc",
+      "git_blob_sha": "be2b1b67bd0c49373b0226ede4e0ac8d27602a17",
+      "sha256": "2cd85f0d6f120daeb36e763d5576a1978b415e6c40bbc2798e33f71768354b85",
+      "url": "https://github.com/ModelDBRepository/241165/blob/93e01d4a927ab0cc5ca137329b86925777e63f02/setParams.hoc"
+    },
+    {
+      "path": "cells/L4_LBC_cACint209_1/biophysics.hoc",
+      "git_blob_sha": "a71421d2f34b88195a872783232e984d21ab920f",
+      "sha256": "273b9353ef60bfb41b8683f90b88d965206908cee0316c0ee8eeab4df56ac7e1",
+      "url": "https://github.com/ModelDBRepository/241165/blob/93e01d4a927ab0cc5ca137329b86925777e63f02/cells/L4_LBC_cACint209_1/biophysics.hoc"
+    },
+    {
+      "path": "cells/L4_LBC_cACint209_1/run.py",
+      "git_blob_sha": "45b47967147340166dde981f2a54c1dcc597adfd",
+      "sha256": "bcbf1bb2621b93fdbce473329cf9ea67d9d744cecc3b9245afbdc75a0a2944e5",
+      "url": "https://github.com/ModelDBRepository/241165/blob/93e01d4a927ab0cc5ca137329b86925777e63f02/cells/L4_LBC_cACint209_1/run.py"
+    },
+    {
+      "path": "cells/L4_LBC_cACint209_1/template.hoc",
+      "git_blob_sha": "d5e36022770819a986fc9243ded0886e7226129a",
+      "sha256": "14058dfc57956ae2cd36cc744352d70dd5b9308c00a6f1a59233ee03043488b7",
+      "url": "https://github.com/ModelDBRepository/241165/blob/93e01d4a927ab0cc5ca137329b86925777e63f02/cells/L4_LBC_cACint209_1/template.hoc"
+    }
+  ]
+}

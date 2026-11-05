@@ -1,0 +1,199 @@
+[
+  {
+    "name": "Ca_soma",
+    "query": "\"SUFFIX Ca_soma\"",
+    "results": [
+      {
+        "url": "https://github.com/ModelDBRepository/53876/blob/2500e46e040cfc7cbacd2373416b73e92f2d3b80/ca_soma.mod",
+        "path": "ca_soma.mod",
+        "display_url": "https://github.com/ModelDBRepository/53876/blob/2500e46e040cfc7cbacd2373416b73e92f2d3b80/ca_soma.mod",
+        "display_title": "ca_soma.mod",
+        "text_matches": [
+          {
+            "property": "content",
+            "fragment": "ENDCOMMENT\n: Calcium ion accumulation with radial diffusion in shells\nNEURON {\nSUFFIX ca_soma\nUSEION ca READ cai, ica WRITE cai\nNONSPECIFIC_CURRENT ifake : used to move the calc. of the breakpt. to same t as other currents\nGLOBAL vrat : vrat must be GLOBAL --see INITIAL block",
+            "matches": [
+              {
+                "text": "SUFFIX ca_soma",
+                "indices": [
+                  79,
+                  93
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "url": "https://github.com/ModelDBRepository/53876/blob/2500e46e040cfc7cbacd2373416b73e92f2d3b80/diagnostics/ca_soma_cylind_shells.mod",
+        "path": "diagnostics/ca_soma_cylind_shells.mod",
+        "display_url": "https://github.com/ModelDBRepository/53876/blob/2500e46e040cfc7cbacd2373416b73e92f2d3b80/diagnostics/ca_soma_cylind_shells.mod",
+        "display_title": "diagnostics/ca_soma_cylind_shells.mod",
+        "text_matches": [
+          {
+            "property": "content",
+            "fragment": "ENDCOMMENT\n: Calcium ion accumulation with radial and longitudinal diffusion\nNEURON {\nSUFFIX ca_soma_cyl\nUSEION ca READ cai, ica WRITE cai\nGLOBAL vrat : vrat must be GLOBAL --see INITIAL block\n: however B which in cadifus.mod was called TotalBuffer may be and is here RANGE",
+            "matches": [
+              {
+                "text": "SUFFIX ca_soma",
+                "indices": [
+                  86,
+                  100
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "url": "https://github.com/ModelDBRepository/53876/blob/2500e46e040cfc7cbacd2373416b73e92f2d3b80/diagnostics/ca_soma_const_delta_thick_shells.mod",
+        "path": "diagnostics/ca_soma_const_delta_thick_shells.mod",
+        "display_url": "https://github.com/ModelDBRepository/53876/blob/2500e46e040cfc7cbacd2373416b73e92f2d3b80/diagnostics/ca_soma_const_delta_thick_shells.mod",
+        "display_title": "diagnostics/ca_soma_const_delta_thick_shells.mod",
+        "text_matches": [
+          {
+            "property": "content",
+            "fragment": "ENDCOMMENT\n: Calcium ion accumulation with radial diffusion in shells\nNEURON {\nSUFFIX ca_soma_const_drthick\nUSEION ca READ cai, ica WRITE cai\nGLOBAL vrat : vrat must be GLOBAL --see INITIAL block\n: however B which in cadifus.mod was called TotalBuffer may be and is here RANGE",
+            "matches": [
+              {
+                "text": "SUFFIX ca_soma",
+                "indices": [
+                  79,
+                  93
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "url": "https://github.com/icgenealogy/icg-channels-Other/blob/7d40613b0ed994138a51ae28f5ce737359d50b51/53876_ca_soma.mod/53876_ca_soma.mod",
+        "path": "53876_ca_soma.mod/53876_ca_soma.mod",
+        "display_url": "https://github.com/icgenealogy/icg-channels-Other/blob/7d40613b0ed994138a51ae28f5ce737359d50b51/53876_ca_soma.mod/53876_ca_soma.mod",
+        "display_title": "53876_ca_soma.mod/53876_ca_soma.mod",
+        "text_matches": [
+          {
+            "property": "content",
+            "fragment": "ENDCOMMENT\n: Calcium ion accumulation with radial diffusion in shells\nNEURON {\nSUFFIX ca_soma\nUSEION ca READ cai, ica WRITE cai\nNONSPECIFIC_CURRENT ifake : used to move the calc. of the breakpt. to same t as other currents\nGLOBAL vrat : vrat must be GLOBAL --see INITIAL block",
+            "matches": [
+              {
+                "text": "SUFFIX ca_soma",
+                "indices": [
+                  79,
+                  93
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "exact_definition_found": false,
+    "notes": "Search matches were lowercase ca_soma from an unrelated calcium-accumulation model, not SUFFIX Ca_soma."
+  },
+  {
+    "name": "CaDynamics_E2_soma",
+    "query": "\"SUFFIX CaDynamics_E2_soma\"",
+    "results": [],
+    "exact_definition_found": false,
+    "notes": "No exact SUFFIX definition returned."
+  },
+  {
+    "name": "Ca_LVAst_soma",
+    "query": "\"SUFFIX Ca_LVAst_soma\"",
+    "results": [],
+    "exact_definition_found": false,
+    "notes": "No exact SUFFIX definition returned."
+  },
+  {
+    "name": "Im_soma",
+    "query": "\"SUFFIX Im_soma\"",
+    "results": [],
+    "exact_definition_found": false,
+    "notes": "No exact SUFFIX definition returned."
+  },
+  {
+    "name": "K_Pst_soma",
+    "query": "\"SUFFIX K_Pst_soma\"",
+    "results": [],
+    "exact_definition_found": false,
+    "notes": "No exact SUFFIX definition returned."
+  },
+  {
+    "name": "K_Tst_soma",
+    "query": "\"SUFFIX K_Tst_soma\"",
+    "results": [],
+    "exact_definition_found": false,
+    "notes": "No exact SUFFIX definition returned."
+  },
+  {
+    "name": "NaTs2_t_soma",
+    "query": "\"SUFFIX NaTs2_t_soma\"",
+    "results": [],
+    "exact_definition_found": false,
+    "notes": "No exact SUFFIX definition returned."
+  },
+  {
+    "name": "Nap_Et2_soma",
+    "query": "\"SUFFIX Nap_Et2_soma\"",
+    "results": [],
+    "exact_definition_found": false,
+    "notes": "No exact SUFFIX definition returned."
+  },
+  {
+    "name": "SK_E2_soma",
+    "query": "\"SUFFIX SK_E2_soma\"",
+    "results": [],
+    "exact_definition_found": false,
+    "notes": "No exact SUFFIX definition returned."
+  },
+  {
+    "name": "SKv3_1_soma",
+    "query": "\"SUFFIX SKv3_1_soma\"",
+    "results": [],
+    "exact_definition_found": false,
+    "notes": "No exact SUFFIX definition returned."
+  },
+  {
+    "name": "Im_apic",
+    "query": "\"SUFFIX Im_apic\"",
+    "results": [],
+    "exact_definition_found": false,
+    "notes": "No exact SUFFIX definition returned."
+  },
+  {
+    "name": "K_Pst_apic",
+    "query": "\"SUFFIX K_Pst_apic\"",
+    "results": [],
+    "exact_definition_found": false,
+    "notes": "No exact SUFFIX definition returned."
+  },
+  {
+    "name": "K_Tst_apic",
+    "query": "\"SUFFIX K_Tst_apic\"",
+    "results": [],
+    "exact_definition_found": false,
+    "notes": "No exact SUFFIX definition returned."
+  },
+  {
+    "name": "NaTs2_t_apic",
+    "query": "\"SUFFIX NaTs2_t_apic\"",
+    "results": [],
+    "exact_definition_found": false,
+    "notes": "No exact SUFFIX definition returned."
+  },
+  {
+    "name": "SKv3_1_apic",
+    "query": "\"SUFFIX SKv3_1_apic\"",
+    "results": [],
+    "exact_definition_found": false,
+    "notes": "No exact SUFFIX definition returned."
+  },
+  {
+    "name": "NaTa_t_nor",
+    "query": "\"SUFFIX NaTa_t_nor\"",
+    "results": [],
+    "exact_definition_found": false,
+    "notes": "No exact SUFFIX definition returned."
+  }
+]
